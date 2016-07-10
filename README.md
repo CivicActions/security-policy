@@ -1,5 +1,5 @@
 ---
-version: 1.0
+version: 1.1
 ---
 
 # CivicActions SECURITY POLICY
@@ -14,20 +14,23 @@ CivicActions has established the following policy to safeguard  the security, co
 - Educate/disseminate our best practices for security throughout the CivicActions community;
 - Demonstrate to clients that we are trustworthy and satisfy contractual requirements for security.
 
-
-Note: As of 2016.06.22, a new version of this policy in in the works. We recommend you consult that for updated information. See: CivicActions Security Policy v1.1-beta
-
 ### Table of Contents
 
 1.	[Information Classification Policy](#information-classification-policy)
 2.	[Acceptable Use Policy](#acceptable-use-policy)
 3.	[Access Policy](#access-policy)
 4.	[Password Policy](#password-policy)
+    - [Strong Passwords are Important](#strong-passwords-are-important)
+    - [Password Managers and Two Factor Authentication](#password-managers-and-two-factor-authentication)
+    - [Handling Passwords](#handling-passwords)
+    - [Some Exceptions](#some-exceptions)
+    - [Private Keys](#private-keys)
 5.	[Server & Site Security](#server--site-security)
+6.	[Security Awareness and Tools](#security-awareness-and-tools)
 
 ## Information Classification Policy
 
-We can group information into 2 classes:
+We can group information into two classes:
 
 1. *Confidential information:*
 
@@ -48,7 +51,7 @@ From the point of view of a typical client project, this means that:
 - The Drupal and CiviCRM databases (and database exports) should always be treated as confidential, since these contain personal information.
 - The uploaded files directory may need to be treated as confidential if the client site has any access-controlled content.
 - The site source code can normally be treated as non-confidential, unless this includes proprietary code from the client or 3rd parties.
-- The contents of the project management site (e.g. Trac), e-mail lists and related communication tools, will normally contain a mixture of confidential and non-confidential information:
+- The contents of the project management site (e.g. Trac, JIRA, Trello, etc.), e-mail lists and related communication tools, will normally contain a mixture of confidential and non-confidential information:
     - Information authored by CivicActions for clients will generally be non-confidential, unless we are bound by an NDA.  However, CivicActions may from time to time produce content for a client that is owned by the client, and/or includes proprietary IP (such as trademarks, or copyrighted text), which should not be disseminated to third parties or used by CivicActions except by express permission of the client.
     - Information authored by clients or 3rd parties should generally be treated as confidential, unless it is clearly public-facing, and then its use other than as set forth in the engagement agreement may still require client permission.  If in doubt, ask your supervisor or the General Counsel.
     - Non-confidential materials can be sourced for distribution or repurposing, but should be reviewed and redacted, if needed, to ensure no confidential information remains.
@@ -61,7 +64,7 @@ It is each person’s responsibility to ensure they understand and follow the da
 
 Broadly, dealing with confidential information involves - to the maximum extent feasible - limiting the number of places (physical and logical) where it is stored, and secondly ensuring that each of those places is as secure as reasonably possible, to prevent unauthorized access.
 
-Users are responsible for carefully tracking any confidential information stored on personal devices (including backup/offline storage). Periodically during and after each project, confidential information stored on personal devices should be reviewed, and anything that is no longer needed should be deleted (after being archived to a CivicActions service, if needed). Users should ensure files are actually deleted (and not stored in a recycle/trash area), ideally running a secure delete on the files, which is available out of the box on OS X and Linux based systems.
+Users are responsible for carefully tracking any confidential information stored on personal devices (including backup/offline storage). Periodically during and after each project, confidential information stored on personal devices should be reviewed, and anything that is no longer needed should be deleted (after being archived to a CivicActions service, if needed). Users should ensure files are actually deleted (and not stored in a recycle/trash area), ideally running [a secure delete on the files](/tools.md#securely-delete-files-and-wipe-disks), which is available out of the box on OS X and GNU/Linux based systems.
 
 There are also a number of security concerns with non-confidential information. Even though we don’t need to protect it from viewing, it is critical that any copies in active use are protected from unauthorized changes.
 
@@ -74,12 +77,12 @@ It is important that our information technology systems, service and network inf
 
 CivicActions IT services provide a number of general user accounts. This includes:
 
-- E-mail forwards/boxes
+- CivicActions Google Apps (Gmail, Hangouts, Docs, Drive, etc.)
 - Web based collaboration accounts such as
     - Our home site
     - Intranet (internal team collaboration)
-    - Project management site (project ticket tracking, documentation etc)
-    - 3rd party collaboration tools (such as Google Docs, Glance, ReadyTalk)
+    - Project management site (Trac, JIRA, Balsamiq, GitLab, ...)
+    - 3rd party collaboration tools (such as Slack, Trello, ...)
     - IP telecommunications/conferencing accounts
 
 Usage of CivicActions user accounts should be as follows:
@@ -130,32 +133,42 @@ All passwords at CivicActions must follow this policy, including passwords used 
 - Personal accounts on any CivicActions internal or client site or service.
 - CivicActions accounts on 3rd party vendor sites.
 
-### Handling passwords
+### Strong Passwords are Important
 
-- Passwords to personal system accounts must never be given to anyone, including IT team personnel and management. IT staff will never ask for your password.
-- Passwords must never be transmitted or stored in a clear text (i.e. readable) format. Passwords must be stored and transmitted by computer only using strong GnuPG/PGP public key encryption. IT services can offer support getting this set up if needed. Passwords may also be transmitted by phone.
-- Specifically, this also means that:
-- Passwords should not be “written down” in a non-encrypted file (if you feel you have to start writing down some “low-value” passwords in order to maintain a large number of different ones, which is a reasonable tradeoff, then please use an encrypted file protected with a strong passphrase, or only write down password hints rather than the actual passwords),
-- The unencrypted clear text contents of a GnuPG/PGP encrypted file/message should only ever be viewed then discarded, but not saved in decrypted form.
-
-### There are a very limited number of exceptions:
-
-- On occasion “starter” passwords for new accounts on web sites may be transmitted/stored in clear text, on condition that the recipient immediately logs in and sets a new strong password. Both the starter and new passwords must adhere to the strong password policy. If possible it is preferable to use a “one time” login link, or transmit “starter” passwords with GnuPG or over phone (text messages are OK as long as they don’t contain any other login details besides the password itself, nor do any other messages sent by the same means).
-- The MySQL vhost password is stored in clear text form on the vhost for usage by Drupal and deployment/testing scripts.
-- The “basic auth” pop-up credentials used on dev/qa and pre-launch instances of client sites can be stored in plain text on the project management system, for easy client reference.
-- There are a few 3rd party services that we have shared accounts for, and which store no confidential information - for example BrowserCam, Glance and ReadyTalk. These passwords can be stored/transmitted in clear text within the team.
-- If you suspect a password has been compromised (for example, it was accidentally typed into an unencrypted chat session), change the password immediately yourself if possible, or inform IT right away, so that the password can be changed by a sysadmin.
-
-### Strong passwords
-
-- Consider using a passphrase instead, even where a “password” is requested. These tend to be easier to remember and stronger than passwords. A reasonable passphrase consists of 4 words or more (3 words is the very minimum, allowed only if the word combination is extremely uncommon and additional non-letter characters are used along with the words). You may separate the words with arbitrary characters of your choice (digits, symbols, whitespace, even letters), which adds extra security. You may also purposely misspell or mangle the words, but only in a way you can remember.
+- Consider using a password manager (see below). If you use a password manager, you can skip the rest of this sub-section.
+- Consider using a passphrase even where a “password” is requested. These tend to be easier to remember and stronger than passwords. A reasonable passphrase consists of 4 words or more (3 words is the very minimum, allowed only if the word combination is extremely uncommon and additional non-letter characters are used along with the words). You may separate the words with arbitrary characters of your choice (digits, symbols, whitespace, even letters), which adds extra security. You may also purposely misspell or mangle the words, but only in a way you can remember.
 - If you choose to (or are forced to) use a short “password”, include a mix of upper and lowercase letters, numbers, and symbols in it.
 - Password length should be around 10 to 14 characters if permitted, and longer still if possible while remaining memorable.
 - Avoid any passwords based on usernames, people or pet names, dictionary words in any language (unless meeting requirements for a passphrase, above), dates, ID numbers, repetition (too few different characters), letter or number sequences, keyboard patterns, etc.
 - Password should be easy to remember – you can use mnemonics (the first letters of a line from a poem or song, for example), but you also need to add multiple non-letter characters - or better yet, just use a passphrase as suggested above.
-- Avoid using the same password for multiple sites or purposes – at the very least passwords for client sites should substantially differ from passwords for internal accounts, and neither should ever be used for 3rd party or non-CivicActions accounts. A passphrase that you use for encryption (such as on a GnuPG/PGP or SSH private key, or with an encrypted file system) must not be reused for authentication to a system. In general, an encryption passphrase should typically be stronger than those used for authentication.
+- Avoid using the same password for multiple sites or purposes – at the very least passwords for client sites should substantially differ from passwords for internal accounts, and neither should ever be used for 3rd party or non-CivicActions accounts.
+- A passphrase that you use for encryption (such as on a GnuPG/PGP or SSH private key, or with an encrypted file system) must not be reused for authentication to a system. In general, an encryption passphrase should typically be stronger than those used for authentication.
 
-### Private keys
+### Password Managers and Two Factor Authentication
+A password manager (such as LastPass) can easily create and maintain hundreds of different 16 character (or more!) passwords. It is not required to use a password manager at CivicActions but we highly recommend it. (Exception: IT staff must have a LastPass account for password sharing.) Be sure to choose a strong password for your password manager.
+
+Modern password managers - and many other services such as Google Apps, GitHub, Slack and more) now accept Two Factor Authentication that can greatly increase the security of the protected assets. CivicActions requires TFA for access to the CivicActions Google Apps such as GMail and Docs as well as OATH-authenticated apps such as GitLab.
+
+Please see the [Security Awareness and Tools](/tools.md) document for details on these subjects and more.
+
+### Handling Passwords
+
+- Passwords to personal system accounts must never be given to anyone, including IT team personnel and management. IT staff will never ask for your password.
+- Passwords should not be “written down” in a non-encrypted file (if you feel you have to start writing down some “low-value” passwords in order to maintain a large number of different ones, which is a reasonable tradeoff, then please use an encrypted file protected with a strong passphrase, or only write down password hints rather than the actual passwords). Or use a password manager.
+- Passwords must never be transmitted or stored in a clear text (i.e. readable) format.
+- Passwords can be stored and transmitted by computer when encrypted with GnuPG public key encryption. IT services can offer support getting this set up if needed.
+    - The unencrypted clear text contents of a GnuPG encrypted file/message should only ever be viewed then discarded, but not saved in decrypted form.
+
+### Some Exceptions
+
+- On occasion, “starter” passwords for new accounts on web sites may be transmitted/stored in clear text, on condition that the recipient immediately logs in and sets a new strong password. Both the starter and new passwords must adhere to the strong password policy. If possible it is preferable to use a “one time” login link, or transmit “starter” passwords with GnuPG or via phone, email, SMS, Slack, etc. When transmitting a password electronically in clear text, do not include the username or website URL in the same message.
+- The MySQL vhost password is stored in clear text form on the vhost for usage by Drupal and deployment/testing scripts (e.g. drush).
+- The “basic auth” pop-up credentials used on dev/qa and pre-launch instances of client sites can be stored in plain text on the project management system, for easy client reference.
+- There are a few 3rd party services that we have shared accounts for, and which store no confidential information - for example: CrossBrowserTesting.com. These passwords can be stored/transmitted in clear text within the team.
+- If you suspect a password has been compromised (for example, it was accidentally typed into an unencrypted chat session), change the password immediately yourself if possible, or inform IT right away, so that the password can be changed by a sysadmin.
+    - This includes the case when a client sends a name/password pair in the clear in an email.
+
+### Private Keys
 
 - SSH public/private key pairs are used to access CivicActions servers.
 - GnuPG (PGP compatible) public/private key pairs are used to transmit and store credentials to CivicActions client sites and internal services.
@@ -165,7 +178,7 @@ All passwords at CivicActions must follow this policy, including passwords used 
 - Private keys should never be placed on external servers – if you need SSH access to one server from another server (typically for a large data transfer), generate a dedicated key pair for that purpose or tunnel SSH over SSH port forwarding (ask IT for instructions).
 - If you suspect a private key file (or its passphrase) has been compromised, inform IT immediately, so that we can revoke the corresponding public key on our servers.
 - Keys must be 2048 bits as a minimum (keys using lower strengths must be replaced). 4096 bits or higher is recommended for new keys.
-- Passphrases may be cached, but should expire at the end of each login session for desktops, or more frequently (when the lid is closed or every 1-4 hours) for laptops or mobile devices.
+- Passphrases may be cached, but should expire after 1-2 hours or at the end of each login session for desktops and laptops and after 5-15 minutes for mobile devices.
 
 ## Server & Site Security
 
@@ -178,21 +191,21 @@ Usage of CivicActions developer accounts should be as follows:
 
 Web administrator account holders (Drupal, CiviCRM or other) must also:
 
-- Be familiar with how to maintain configuration security (http://drupal.org/security/secure-configuration).
+- Be familiar with how to maintain configuration security ([drupal.org/security/secure-configuration](http://drupal.org/security/secure-configuration)).
 - After changing site permissions, the site must be tested by logging in as a user with each affected role and ensuring that access is limited correctly.
 - After changing settings affecting content/data access control, the site must be tested to ensure the settings are correct.
 - The use of PHP in the web administration interface is strongly discouraged (as this code is harder to find and hence audit).
 - Respect the privacy of site users, avoiding accessing personal data such as private messages.
 
-Developers and themers working on the site codebase (and committing code to SVN) must also:
+Developers and themers working on the site codebase (and committing code to Git) must also:
 
-- Ensure their own code follows Drupal coding standards (http://drupal.org/coding-standards) and security standards (http://drupal.org/writing-secure-code), and is well abstracted and commented throughout. The project technical lead (or a designated lead engineer/lead themer or peer-review process) is responsible for reviewing all new/modified code each sprint, and ensuring it meets a high standard of quality.
+- Ensure their own code follows Drupal coding standards ([drupal.org/coding-standards](http://drupal.org/coding-standards)) and security standards ([drupal.org/writing-secure-code](http://drupal.org/writing-secure-code)), and is well abstracted and commented throughout. The project technical lead (or a designated lead engineer/lead themer or peer-review process) is responsible for reviewing all new/modified code each sprint, and ensuring it meets a high standard of quality.
 - Ensure the standard dev-qa-live process is always followed, such that all changes that may affect site security can be thoroughly tested before being made live.
 - Ensure that external developers (client or 3rd party) working on the site codebase are either:
     - A full part of our developer team, such that they been assessed/trained to have the appropriate skills and are subject to TL code review.
     - OR: The client confirms understanding that we have not assessed their skills or are reviewing their code. This scenario is best avoided, but is sometimes necessary if the site is being transitioned to another developer.
 - Review all contributed code they have not previously used for basic quality - this is not a formal security audit in most cases, but rather checking the usage stats, issue queue, skimming the module code for readability and adherence to good practices etc. Code that is actively used and maintained and follows best practices is less likely to have serious security issues.
-- Check for security advisories (http://drupal.org/security) for modules used on each active development site and ensure they are upgraded where necessary, before the site is made live.
+- Check for security advisories ([drupal.org/security](http://drupal.org/security)) for modules used on each active development site and ensure they are upgraded where necessary, before the site is made live.
 - Understand common attack vectors and the best practices for preventing them, including:
     - SQL injection, prevented by proper query construction and placeholder usage.
     - XSS (cross site scripting) attacks, prevented by ensuring user data is always sanitized as appropriate on output.
@@ -211,7 +224,7 @@ Developers and themers maintaining local sandbox copies of client sites must als
 Developers and themers working on the site vhost (SSH/shell, file system, database) must also:
 
 - Ensure they follow best practices with respect to SSH keys, passphrases and passphrase caching (see above).
-- SSH, sftp and scp access to vhosts should only ever be through our central pull keys SSH key distribution system. Access by password, manually installed SSH key, web based “shell” script, port forwarding to 3rd parties or other methods are forbidden by unless authorized in advance by the CIO.
+- SSH, SFTP and SCP access to vhosts should only ever be through our central pull keys SSH key distribution system. Access by password, manually installed SSH key, web based “shell” script, port forwarding to 3rd parties or other methods are forbidden by unless authorized in advance by the CIO.
 - Temporary SSH port forwarding is permitted for the purpose of accessing the server MySQL from your own desktop.
 - Accessing CivicActions servers by initiating an SSH connection from external client or 3rd party servers is strongly discouraged - it is preferable to SSH out from the CivicActions server.
 - Running non-standard software on a vhost requires a system ticket and approval from a member of the IT team. This includes:
@@ -229,20 +242,12 @@ IT team system administrators working on CivicActions servers must also:
 - Work with the IT team to ensure server and backup health is monitored and alerts are responded to promptly.
 - Ensure offsite backups are transferred and stored only in encrypted form.
 - Ensure the Hurricane Electric and RimuHosting access list (that controls remote hands and physical server access) is maintained.
- 
 
-THANK YOU FOR REVIEWING THIS SECURITY POLICY.   CIVICACTIONS IS TRYING HARD TO SAFEGUARD OUR AND OUR  CLIENTS’ CONFIDENTIAL INFORMATION AND INDIVIDUAL PRIVACY.  PLEASE LET US KNOW IF YOU THINK THIS POLICY REQUIRES CHANGES OR NEEDS UPDATING.
+## Security Awareness and Tools
+We maintain a [Security Awareness and Tools](/tools.md) document that dives deeper into some additional topics, including:
 
-
-
-ACKNOWLEDGEMENT
-The undersigned acknowledges that they have received, read and will abide by CivicActions’ Security Policy.
-
-
-___________________________________    	____________________________________
-Dated						Signature
-
-___________________________________ 
-Print Name
-
-
+- Password Management Tools
+- Two Factor Authentication
+- Phishing and Social Engineering
+- Backups
+- Secure Delete Files and Wiping Disks
