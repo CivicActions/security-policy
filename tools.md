@@ -26,6 +26,7 @@ A password manager will enable you to have unique, strong passwords for every se
 - The [LastPass](https://lastpass.com/) password generator can easily create and maintain hundreds of different 16 character (or more!) passwords. And LastPass has free iPhone and Android apps.
 - LastPass is used by the CivicActions System Admins and Infrastructure Support Team.
 - We recommend LastPass premium but do not require it. A premium account will enable unlimited sync across your devices and more robust two-factor authentication.
+- It is fine (and perhaps preferable, because your browser can only use one LastPass account at a time) to use a personal email address to create your LastPass account. 
 
 ## Use Two Factor (or 2-Step) Authentication (TFA, 2FA)
 Two factor authentication includes something you know (e.g. your memorized password) and something you have (e.g. your smartphone or a YubiKey) and can greatly increase the security of your systems. CivicActions recommends you use Two Factor Authentication for services that support it.
