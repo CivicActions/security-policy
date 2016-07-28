@@ -33,7 +33,7 @@ Two factor authentication includes something you know (e.g. your memorized passw
 
 For example, as your password manager grows to have more passwords in it - not only CivicActions’ systems and clients but also your personal bank accounts, credit cards, school records, etc. - it becomes increasingly important to have it protected by more than just a password.
 
-CivicActions requires that its employees and contractors that are given access to the CivicActions Google Apps - that include GMail, Hangouts and Google Docs access - use Two Factor Authentication on their CivicActions Google Account. 
+CivicActions requires that its employees and contractors that are given access to the CivicActions Google Apps - that include GMail, Hangouts and Google Docs access - use Two Factor Authentication on their CivicActions Google Account.
 
 ### Two-Factor Authenticators
 There are many hardware and software tools for creating secure “one time passwords” (OTP). Two that we frequently use internally are described below.
@@ -76,11 +76,12 @@ Social engineering is the most common attack vector used to compromise computer 
 - Baiting
     - Seemingly innocent (or interesting) abandoned USB, CD, DVD media with autorun
 	
-- Coffee shop WiFi
+- Public WiFi (e.g., coffee shop, airport, library, ...)
     - Turn off sharing
     - Don’t automatically connect to unknown WiFi hotspots
-    - Confirm the network name
-    - Turn on firewall
+    - Confirm the network name - know the name of your hotspot!
+    - Turn on your local firewall
+    - As usual, never enter your name or password information when on an insecure connection
 
 ## Keep Your Systems Up-to-date
 
