@@ -10,7 +10,8 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 	- [LastPass](#lastpass)
 2.  [Use Two Factor (or 2-Step) Authentication (TFA, 2FA)](#use-two-factor-or-2-step-authentication-tfa-2fa)
     - [Two-Factor Authenticators](#two-factor-authenticators)
-	- [Partial List of TFA Services](#partial-list-of-tfa-services)
+    - [Partial List of TFA Services](#partial-list-of-tfa-services)
+    - [TFA Backup Codes](#tfa-backup-codes)
 3.  [IT: Sharing Service Accounts](#it-sharing-service-accounts)
 4.  [Phishing and Social Engineering](#phishing-and-social-engineering)
 5.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
@@ -53,6 +54,10 @@ There are many hardware and software tools for creating secure “one time passw
 - GitHub (especially for your [CivicAction account](https://github.com/CivicActions)): [Securing your account with two-factor authentication (2FA)](https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/)
 - GitLab: See [your profile](https://git.civicactions.net/profile/account)
 - Slack: [Enabling two-factor authentication](https://get.slack.help/hc/en-us/articles/204509068-Enabling-two-factor-authentication#enablingtwofactor-authentication)
+
+### TFA Backup Codes
+
+As a final step when setting up Two Factor Authentication with most services (Google, LastBass, Github, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure.
 
 ## IT: Sharing Service Accounts
 
