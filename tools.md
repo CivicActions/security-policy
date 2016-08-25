@@ -16,6 +16,7 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 5.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
 6.  [Backups](#backups)
 7.  [Securely Delete Files and Wipe Disks](#securely-delete-files-and-wipe-disks)
+8.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
 
 ## Password Management Tools
 
@@ -112,3 +113,9 @@ GNU/Linux:
 Mac OS X:
 - https://support.apple.com/kb/PH18638 (Yosemite)
 - https://www.intego.com/mac-security-blog/how-to-securely-empty-trash-in-os-x-el-capitan/ (El Capitan)
+
+## Drupal Best Practices and Writing Secure Code
+
+CivicActions Drupal Developers are expected to know, understand and integrate into their work:
+- [Drupal coding standards and best practices](https://www.drupal.org/developing/best-practices)
+- [How to write secure code in Drupal](https://www.drupal.org/writing-secure-code)
