@@ -57,7 +57,7 @@ There are many hardware and software tools for creating secure “one time passw
 
 ### TFA Backup Codes
 
-As a final step when setting up Two Factor Authentication with most services (Google, LastBass, Github, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure.
+As a final step when setting up Two Factor Authentication with most services (Google, LastPass, GitHub, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure.
 
 ## IT: Sharing Service Accounts
 
