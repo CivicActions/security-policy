@@ -7,7 +7,7 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 ## Table of Contents
 1.  [Password Management Tools](#password-management-tools)
     - [LastPass](#lastpass)
-    - [Disable Browser Password Autofill](#disable-browser-password-utofill)
+    - [Disable Browser Password Autofill](#disable-browser-password-autofill)
 2.  [Use Two Factor (or 2-Step) Authentication (TFA, 2FA)](#use-two-factor-or-2-step-authentication-tfa-2fa)
     - [Two-Factor Authenticators](#two-factor-authenticators)
     - [Partial List of TFA Services](#partial-list-of-tfa-services)
