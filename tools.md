@@ -6,8 +6,8 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 
 ## Table of Contents
 1.  [Password Management Tools](#password-management-tools)
-    - [Use a Password Manager](#use-a-password-manager)
-	- [LastPass](#lastpass)
+    - [LastPass](#lastpass)
+    - [Disable Browser Password Autofill](@disable-browser-password-utofill)
 2.  [Use Two Factor (or 2-Step) Authentication (TFA, 2FA)](#use-two-factor-or-2-step-authentication-tfa-2fa)
     - [Two-Factor Authenticators](#two-factor-authenticators)
     - [Partial List of TFA Services](#partial-list-of-tfa-services)
@@ -21,14 +21,19 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 
 ## Password Management Tools
 
-### Use a Password Manager
 A password manager will enable you to have unique, strong passwords for every service that you log into. Good password managers will generate new passwords for you, auto-fill web forms, allow extra protection for high-security accounts (like banking), and more. Choose a password manager that encrypts locally (in your browser, so you don’t have to trust the provider to keep their data safe) and that has iPhone and Android apps that will auto-sync with the manager. At CivicActions, we currently recommend LastPass as it is the most full-featured, but we are keeping a close eye on the FOSS KeePass and Password Safe solutions.
 
 ### LastPass
 - The [LastPass](https://lastpass.com/) password generator can easily create and maintain hundreds of different 16 character (or more!) passwords. And LastPass has free iPhone and Android apps.
 - LastPass is used by the CivicActions System Admins and Infrastructure Support Team.
 - We recommend LastPass premium but do not require it. A premium account will enable unlimited sync across your devices and more robust two-factor authentication.
+    - Set up Two Factor Authentication on your LastPass Account (see below). LastPass will be storing all your passwords, so make it secure.
 - It is fine (and perhaps preferable, because your browser can only use one LastPass account at a time) to use a personal email address to create your LastPass account. 
+
+### Disable Browser Password Autofill
+LastPass provides secure password management especially when unlocked via Two Factor Authentication. Storing new passwords created in LastPass in your browser completely defeats this security, enabling anyone with access to your browser access to all your sites. If asked by your browser "Do you want to save this password in your browser?" answer no. Better, disable this action altogether:
+- In Chrome, go to chrome://settings/ and uncheck "Offer to save your web passwords"
+- In Firefox, go to about:preferences#security and uncheck "Remember logins for sites"
 
 ## Use Two Factor (or 2-Step) Authentication (TFA, 2FA)
 Two factor authentication includes something you know (e.g. your memorized password) and something you have (e.g. your smartphone or a YubiKey) and can greatly increase the security of your systems. CivicActions recommends you use Two Factor Authentication for services that support it.
