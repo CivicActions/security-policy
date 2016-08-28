@@ -15,9 +15,10 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 3.  [IT: Sharing Service Accounts](#it-sharing-service-accounts)
 4.  [Phishing and Social Engineering](#phishing-and-social-engineering)
 5.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
-6.  [Backups](#backups)
-7.  [Securely Delete Files and Wipe Disks](#securely-delete-files-and-wipe-disks)
-8.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
+6.  [Disk Encryption and Storage Management](#disk-encryption-and-storage-management)
+    - [Backups](#backups)
+    - [Securely Delete Files and Wipe Disks](#securely-delete-files-and-wipe-disks)
+7.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
 
 ## Password Management Tools
 
@@ -96,9 +97,13 @@ Social engineering is the most common attack vector used to compromise computer 
 
 ## Keep Your Systems Up-to-date
 
-One of the best ways to protect yourself from being hacked (other than via a social engineering pathway) is to keep your software on your computers and phones up-to-date. Sometimes you may reasonably want to wait for a .1 or .2 release before updating, but don’t get far behind.
+One of the best ways to protect yourself from being hacked (other than via a social engineering pathway) is to keep your software on your computers and phones up-to-date. Sometimes you may reasonably want to wait for a .1 or .2 release before updating after a new major release, but don’t get far behind.
 
-## Backups
+## Disk Encryption and Storage Management
+
+Most modern disks (and SSDs) have self-encrypting drive (SED) technology built in. CivicActions highly recommends SSDs for their increased speed and the hardware-based encryption (self-encrypting drive or "SED" technology) that will protect the drive when the machine is off. This is particularly important for laptops that can be easily stolen. When you buy a new disk or configure a new laptop, turn on the disk encryption. Some of CivicActions' clients will demand it.
+
+### Backups
 
 With more work captured in the cloud by Slack, Gmail, Google Drive, GitHub, etc. there is less that needs to be backed up. But you won't know what you'll miss until your system doesn't boot up because of an unrecoverable hard drive (or SSD) error. At the least, back up your security keys and personal preferences directories, such as (examples in GNU/Linux):
 
@@ -108,11 +113,11 @@ With more work captured in the cloud by Slack, Gmail, Google Drive, GitHub, etc.
 
 Consider committing your personalization files (like `~/.bashrc`) into a Git repository. Just make sure that you do *not* commit any files that may contain private keys or passwords.
 
-Also, take care not to backup any company or client sensitive files or data as it is important that that be completely deleted from your machine(s) when you stop working for that client.
+Also, take care that you do *not* backup any company or client sensitive files or data as it is important that that be completely deleted from your machine(s) when you stop working for that client.
 
 Finally, if you use any backup mechanism more complicated than simply copying the files to another medium, ensure that you know how to restore the files, too, as backups are worthless if you can't retrieve them.
 
-## Securely Delete Files and Wipe Disks
+### Securely Delete Files and Wipe Disks
 
 When you delete a file, it doesn't actually go away. Usually, all that occurs is the file name and a pointer to its bits are removed from a directory listing. With the proper tools, deleted files can be recovered. For this reason, it's important that old disks be securely wiped before being given or thrown away. Some pointers are given below:
 
@@ -123,6 +128,9 @@ GNU/Linux:
 Mac OS X:
 - https://support.apple.com/kb/PH18638 (Yosemite)
 - https://www.intego.com/mac-security-blog/how-to-securely-empty-trash-in-os-x-el-capitan/ (El Capitan)
+
+Erasing an entire disk:
+- https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase
 
 ## Drupal Best Practices and Writing Secure Code
 
