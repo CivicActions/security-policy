@@ -1,5 +1,5 @@
 ---
-version: 1.1
+version: 1.1.1
 ---
 
 # CivicActions SECURITY POLICY
@@ -100,9 +100,10 @@ In addition to user accounts we provide developer and system administrator acces
 The security of our systems is only as strong as the weakest link. Hence it is important that all devices that connect and are authenticating to any CivicActions IT system are as secure as possible. Specifically:
 
 - This includes access to web based accounts, such as our intranet - as well as developer accounts.
-- This covers both desktop and laptop machines, as well as devices such as mobile phones and network routers (including home/office Internet gateways). This also includes 3rd party sourced servers/services that contractors may employ as part of their workflow.
+- This covers both desktop and laptop machines, as well as devices such as mobile phones and network routers (including home/office Internet gateways). This also includes 3rd party sourced servers/services that employees and contractors may employ as part of their workflow.
 - CivicActions is responsible for maintaining the security of our own systems, as well as supporting computers or other devices that may be provided to staff as a part of their employment.
-- Contractors are responsible for maintaining their own systems to the highest standards of security. This includes (but is not limited to) the standards described in this document.
+- Employees and contractors are responsible for maintaining their own systems to the highest standards of security. This includes (but is not limited to) the standards described in this document.
+- The civicactions.com Google docs and domain must be accessed via your civicactions.com email address. In particular, it is not permitted to add a personal email address to shared civicactions.com domain Google docs.
 
 Before connecting and authenticating to any CivicActions IT system or storing confidential information on your systems, all users must ensure that:
 
