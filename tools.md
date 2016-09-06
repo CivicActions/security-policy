@@ -51,7 +51,7 @@ There are many hardware and software tools for creating secure “one time passw
  - This page also has instructions for setting up 2-Step Verification for multiple Google accounts.
 
 *YubiKey*
-- See CivicActions' [YubiKey page](https://civicactions.net/content/yubikey) _(todo: move to github)_
+- See CivicActions' [YubiKey page](/yubikey.md)
 - See YubiKey documentation on how to use TFA with: [GMail](https://www.yubico.com/why-yubico/for-individuals/gmail-for-individuals/), [LastPass](https://www.yubico.com/why-yubico/for-individuals/password-managers/lastpass/), and [GitHub](https://www.yubico.com/why-yubico/for-individuals/github/)
 
 ### Partial List of TFA Services
