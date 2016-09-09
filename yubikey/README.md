@@ -6,6 +6,8 @@ Table of Contents
 =================
 
 * [Basic Setup (do this first)](#basic-setup-do-this-first)
+  * [GNU/Linux specific instructions](linux.md)
+  * [Mac OS X specific instructions](macosx.md)
 * [Enable YubiKey TFA for applications](#enable-yubikey-tfa-for-applications)
   * [Lastpass](#lastpass)
   * [Google](#google)
@@ -13,7 +15,7 @@ Table of Contents
   * [AWS IAM Account](#aws-iam-account)
 
 ## Basic Setup (do this first)
-Before you can have your YubiKey act as a second (hardware) authentication token for your system, you need to install and configure some software that connects your YubiKey to the screen locking software on your computer. Instructions have been separated into two files:
+Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. Also included are "advanced" instructions that enable locking your screen with your YubiKey.
 - [GNU/Linux specific instructions](linux.md)
 - [Mac OS X specific instructions](macosx.md)
 

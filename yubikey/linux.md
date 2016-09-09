@@ -2,35 +2,45 @@
 
 This is the GNU/Linux specific documentation for [YubiKey](/yubikey).
 
-Please help make this page more useful by adding links you found useful (describe exactly how they are useful) and and specific steps you used to install, configure, and test your YubiKey.
+_Please help make this page more useful by adding links you found useful (describe exactly how they are useful) and and specific steps you used to install, configure, and test your YubiKey._
 
 Table of Contents
 =================
 
-* [Install packages](#install-packages)
-  * [Arch](#arch)
-  * [Fedora](#fedora)
-  * [Ubuntu, Xubuntu](#ubuntu-xubuntu)
-* [Personalize your YubiKey](#personalize-your-yubikey)
-  * [Add a challenge-response slot](#add-a-challenge-response-slot)
-* [Set up PAM TFA](#set-up-pam-tfa)
-* [Screen lock on lid closed (X server)](#screen-lock-on-lid-closed-x-server)
-  * [Screen lock with xss-lock](#screen-lock-with-xss-lock)
-  * [Screen lock with xautolock](#screen-lock-with-xautolock)
+* [Basic Setup](#basic-setup)
+  * [Install packages](#install-packages)
+	* [Arch](#arch)
+	* [Fedora](#fedora)
+	* [Ubuntu, Xubuntu](#ubuntu-xubuntu)
+  * [Personalize your YubiKey](#personalize-your-yubikey)
+	* [Add a challenge-response slot](#add-a-challenge-response-slot)
+* [Advanced: Locking your Machine](#advanced-locking-your-machine)
+  * [Installing the Yubico libpam module](#installing-the-yubico-libpam-module)
 	* [Arch](#arch-1)
-* [YubiKey removal lock](#yubikey-removal-lock) (optional)
-* [Away detection ideas](#away-detection-ideas) (optional)
+	* [Fedora](#fedora-1)
+	* [Ubuntu/Xubuntu](#ubuntuxubuntu)
+  * [Set up PAM TFA](#set-up-pam-tfa)
+  * [Screen lock on lid closed (X server)](#screen-lock-on-lid-closed-x-server)
+	* [Screen lock with xss-lock](#screen-lock-with-xss-lock)
+	* [Screen lock with xautolock](#screen-lock-with-xautolock)
+	  * [Arch](#arch-2)
+  * [YubiKey removal lock](#yubikey-removal-lock)
+  * [Away detection ideas](#away-detection-ideas)
 
-## Install packages
+## Basic Setup
 
-### Arch
+### Install packages
+
+Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey.
+
+#### Arch
 _See also: https://wiki.archlinux.org/index.php/yubikey_
 ```
 $ pacaur -S perl-net-ldap-server    # this is a prerequisite
-$ pacaur -S yubikey-neo-manager-git yubico-pam
+$ pacaur -S yubikey-neo-manager-git
 ```
 
-### Fedora
+#### Fedora
 _See also: https://fedoraproject.org/wiki/Using_Yubikeys_with_Fedora_
 ```
 dnf copr enable jjelen/yubikey-neo-manager 
@@ -38,16 +48,16 @@ dnf copr enable spartacus06/yubikey-utils
 dnf install yubikey-neo-manager yubioath-desktop yubikey-personalization-gui
 ```
 
-### Ubuntu, Xubuntu
+#### Ubuntu, Xubuntu
 _See e.g.: https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html_
 
 tbd...
 
-## Personalize your YubiKey
+### Personalize your YubiKey
 This allows you to use your Yubikey with Google TFA (new fangled U2F), as well as LastPass (which uses the OTP application).
 _Note: these checkboxes may already be checked on YubiKey 4 devices._
 
-### Add a challenge-response slot
+#### Add a challenge-response slot
 ```
 $ neoman
 # Enable OTP, U2F, CCID checkboxes if needed, follow instructions to add and remove key.
@@ -55,10 +65,28 @@ $ neoman
 ​$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
 ```
 
-## Set up PAM TFA
-PAM is the Pluggable Authentication Module used by GNU/Linux and Mac OS X to manage login authentication.
+## Advanced: Locking your Machine
+This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you **don't lock yourself out!**
 
-This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you don't lock yourself out!
+This is required of CivicActions "privileged users" such as System Administrators.
+
+### Installing the Yubico libpam module
+In order to connect your YubiKey to the screen locking software on your computer, you need to 
+
+#### Arch
+```
+$ pacaur -S yubico-pam
+```
+
+#### Fedora
+
+#### Ubuntu/Xubuntu
+```
+sudo apt-get install libpam-yubico
+```
+
+### Set up PAM TFA
+PAM is the Pluggable Authentication Module used by GNU/Linux and Mac OS X to manage login authentication.
 
 See [Yubico GitHub](https://github.com/Yubico/yubico-pam/blob/b0e243835e61418bfa760e57c3d313b2e9452e87/doc/Authentication_Using_Challenge-Response.adoc) page for complete documentation.
 ```
@@ -70,10 +98,10 @@ Ubuntu autoconfiguration during installation of `libpam-yubico` may already have
 auth      required  pam_yubico.so   mode=challenge-response
 ```
 
-## Screen lock on lid closed (X server)
+### Screen lock on lid closed (X server)
 After a period of inactivity and (for laptops) when you close the lid, the screen must blank (or be replaced with a background image.
 
-### Screen lock with xss-lock
+#### Screen lock with xss-lock
 Links:
 - https://wiki.archlinux.org/index.php/Power_management#xss-lock
 - http://manpages.ubuntu.com/manpages/xenial/man1/xss-lock.1.html
@@ -92,12 +120,12 @@ Or if running the i3 windor manager, put this in your ~/.i3/config file:
 exec --no-startup-id xss-lock -- i3lock -n -c 000000
 ```
 
-### Screen lock with xautolock
+#### Screen lock with xautolock
 This uses [xsecurelock](https://github.com/google/xsecurelock) (recommended screen lock) together with [xautolock](http://linux.die.net/man/1/xautolock) (simple away command runner tool) to lock the screen after 10 minutes when away from home network. It also suspends after 30 mins, adds a hot corner to block locking (useful if watching a video, for example) and adds a notification (using `dunst` and `notify-send`) before locking. Note that pretty much all of these pieces are optional (you could use `gnome-screensaver` or `xscreensaver` for away detection for instance), but using `xsecurelock` for locking is strongly recommended since other lock screens have had vunerabilities.
 
 Install packages as needed (`dunst` and `libnotify` optional -- you may already have a notification system):
 
-#### Arch
+##### Arch
 ```
 $ pacaur -S xsecurelock-git xautolock dunst libnotify
 ```
@@ -109,7 +137,7 @@ dunst &
 xautolock -time 10 -corners -000 -locker '/usr/bin/xsecurelock auth_pam_x11 saver_blank' -killtime 30 -killer 'systemctl suspend' -notify 30 -notifier "notify-send -- 'Locking screen in 30 seconds'" &
 ```
 
-## YubiKey removal lock
+### YubiKey removal lock
 For additional security, you may want to immediately lock the screen when the YubiKey is removed.
 
 This locks the laptop immediately when any Yubikey is removed. If you are not using xautolock as your "away detector", replace xautolock with a command to trigger your screen lock with the "away detector" that you do use. This is inspired by https://vtluug.org/wiki/Yubikey
@@ -135,7 +163,7 @@ Next, create (with sudo) a device notification file `/etc/udev/rules.d/90-yubike
 ACTION=="remove", ATTRS{idVendor}=="1050", RUN+="/home/$USER/bin/ykgone"
 ```
 
-## Away detection ideas
+### Away detection ideas
 Exceptions to the "idle timeout lock" can be made if you are on your home network and feel that it is secure. Adapt the below script if you only want to lock your screen when you are away from home.
 
 Assuming `~/bin/` is in your `$PATH`, create executable file `~/bin/out-lock` and replace `xsecurelock` or `i3lock` above with `~/bin/out-lock`:
