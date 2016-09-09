@@ -7,7 +7,7 @@ _Please help make this page more useful by adding links you found useful (descri
 Table of Contents
 =================
 
-* [Required: Screen lock when idle or lid closed (X server)](#required-screen-lock-when-idle-or-lid-closed-x-server)
+* [Screen lock when idle or lid closed (X server)](#screen-lock-when-idle-or-lid-closed-x-server)
   * [Screen lock with xss-lock](#screen-lock-with-xss-lock)
   * [Screen lock with xautolock](#screen-lock-with-xautolock)
 	* [Arch](#arch)
@@ -27,9 +27,9 @@ Table of Contents
   * [Set up PAM TFA](#set-up-pam-tfa)
   * [YubiKey removal lock](#yubikey-removal-lock)
 
-## Required: Screen lock when idle or lid closed (X server)
-_Note: this section is general purpose and required; does not require YubiKey_
-After a period of inactivity and (for laptops) when you close the lid, the screen must blank (or be replaced with a background image.
+## Screen lock when idle or lid closed (X server)
+_Note: this section does not require YubiKey_
+After a period of inactivity and (for laptops) when you close the lid, the screen must blank (or be replaced with a background image).
 
 ### Screen lock with xss-lock
 This uses [xss-lock](http://manpages.ubuntu.com/manpages/xenial/man1/xss-lock.1.html) (the brains behind the venerable xscreensaver function) and [i3lock](http://i3wm.org/i3lock/) as the screen locker, but you can substitute this with another locker such as [xsecurelock](https://github.com/google/xsecurelock). xss-lock subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). xss-lock also reacts to DPMS events and runs or kills the locker in response. (See also: [Power Management with xss-lock](https://wiki.archlinux.org/index.php/Power_management#xss-lock))
