@@ -7,27 +7,80 @@ _Please help make this page more useful by adding links you found useful (descri
 Table of Contents
 =================
 
-* [Basic Setup](#basic-setup)
-  * [Install packages](#install-packages)
+* [Required: Screen lock when idle or lid closed (X server)](#required-screen-lock-when-idle-or-lid-closed-x-server)
+  * [Screen lock with xss-lock](#screen-lock-with-xss-lock)
+  * [Screen lock with xautolock](#screen-lock-with-xautolock)
 	* [Arch](#arch)
+  * [Away detection ideas](#away-detection-ideas)
+* [Basic YubiKey Setup](#basic-yubikey-setup)
+  * [Install packages](#install-packages)
+	* [Arch](#arch-1)
 	* [Fedora](#fedora)
 	* [Ubuntu, Xubuntu](#ubuntu-xubuntu)
   * [Personalize your YubiKey](#personalize-your-yubikey)
 	* [Add a challenge-response slot](#add-a-challenge-response-slot)
-* [Advanced: Locking your Machine](#advanced-locking-your-machine)
+* [Advanced: Locking your Machine with YubiKey](#advanced-locking-your-machine-with-yubikey)
   * [Installing the Yubico libpam module](#installing-the-yubico-libpam-module)
-	* [Arch](#arch-1)
+	* [Arch](#arch-2)
 	* [Fedora](#fedora-1)
 	* [Ubuntu/Xubuntu](#ubuntuxubuntu)
   * [Set up PAM TFA](#set-up-pam-tfa)
-  * [Screen lock on lid closed (X server)](#screen-lock-on-lid-closed-x-server)
-	* [Screen lock with xss-lock](#screen-lock-with-xss-lock)
-	* [Screen lock with xautolock](#screen-lock-with-xautolock)
-	  * [Arch](#arch-2)
   * [YubiKey removal lock](#yubikey-removal-lock)
-  * [Away detection ideas](#away-detection-ideas)
 
-## Basic Setup
+## Required: Screen lock when idle or lid closed (X server)
+_Note: this section is general purpose and required; does not require YubiKey_
+After a period of inactivity and (for laptops) when you close the lid, the screen must blank (or be replaced with a background image.
+
+### Screen lock with xss-lock
+This uses [xss-lock](http://manpages.ubuntu.com/manpages/xenial/man1/xss-lock.1.html) (the brains behind the venerable xscreensaver function) and [i3lock](http://i3wm.org/i3lock/) as the screen locker, but you can substitute this with another locker such as [xsecurelock](https://github.com/google/xsecurelock). xss-lock subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). xss-lock also reacts to DPMS events and runs or kills the locker in response. (See also: [Power Management with xss-lock](https://wiki.archlinux.org/index.php/Power_management#xss-lock))
+
+If your system is already set up to sleep after a timeout and suspend when you close the lid, this may be all you need.
+
+Start xss-lock when you start your window manager, passing it the name of the screen locker you want to use. So you could put this in your ~/.xinitrc file:
+```
+xss-lock -- i3lock -n -c 000000
+```
+
+Or if running the i3 windor manager, put this in your ~/.i3/config file:
+```
+exec --no-startup-id xss-lock -- i3lock -n -c 000000
+```
+
+### Screen lock with xautolock
+This uses [xsecurelock](https://github.com/google/xsecurelock) (recommended screen lock) together with [xautolock](http://linux.die.net/man/1/xautolock) (simple away command runner tool) to lock the screen after 10 minutes when away from home network. It also suspends after 30 mins, adds a hot corner to block locking (useful if watching a video, for example) and adds a notification (using `dunst` and `notify-send`) before locking. Note that pretty much all of these pieces are optional (you could use `gnome-screensaver` or `xscreensaver` for away detection for instance), but using `xsecurelock` for locking is strongly recommended since other lock screens have had vunerabilities.
+
+Install packages as needed (`dunst` and `libnotify` optional -- you may already have a notification system):
+
+#### Arch
+```
+$ pacaur -S xsecurelock-git xautolock dunst libnotify
+```
+
+Next make sure dunst (if using for notifications) and xautolock (if using) are started on X login.
+For example, you can adapt the following to start when your window manager starts, e.g., add to `~/.xinitrc`:
+```
+dunst &
+xautolock -time 10 -corners -000 -locker '/usr/bin/xsecurelock auth_pam_x11 saver_blank' -killtime 30 -killer 'systemctl suspend' -notify 30 -notifier "notify-send -- 'Locking screen in 30 seconds'" &
+```
+
+### Away detection ideas
+Exceptions to the "idle timeout lock" can be made if you are on your home network and feel that it is secure. Adapt the below script if you only want to lock your screen when you are away from home.
+
+Assuming `~/bin/` is in your `$PATH`, create executable file `~/bin/out-lock` and replace `xsecurelock` or `i3lock` above with `~/bin/out-lock`:
+```
+#!/bin/sh
+# Not home (you will need to adjust to some reliable/secure test for your home network).
+# In this case, an internal NAT addressable file hoe.txt has the given sha256sum value.
+if ! curl -s 'http://192.168.1.99/home.txt' | sha256sum | grep 6094dd1d56b9d8638bc0e8e630683787151b81320d81568d97ec8daecb370bca > /dev/null; then
+  # Not already locked.
+  if ! pidof xsecurelock > /dev/null; then
+    # Lock screen.
+    /usr/bin/xsecurelock auth_pam_x11 saver_blank
+  fi
+fi
+```
+
+## Basic YubiKey Setup
 
 ### Install packages
 
@@ -65,7 +118,7 @@ $ neoman
 ​$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
 ```
 
-## Advanced: Locking your Machine
+## Advanced: Locking your Machine with YubiKey
 This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you **don't lock yourself out!**
 
 This is required of CivicActions "privileged users" such as System Administrators.
@@ -98,45 +151,6 @@ Ubuntu autoconfiguration during installation of `libpam-yubico` may already have
 auth      required  pam_yubico.so   mode=challenge-response
 ```
 
-### Screen lock on lid closed (X server)
-After a period of inactivity and (for laptops) when you close the lid, the screen must blank (or be replaced with a background image.
-
-#### Screen lock with xss-lock
-Links:
-- https://wiki.archlinux.org/index.php/Power_management#xss-lock
-- http://manpages.ubuntu.com/manpages/xenial/man1/xss-lock.1.html
-
-This uses xss-lock (the brains behind the venerable xscreensaver function) and [i3lock](http://i3wm.org/i3lock/) as the screen locker, but you can substitute this with another locker such as [xsecurelock](https://github.com/google/xsecurelock). xss-lock subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). xss-lock also reacts to DPMS events and runs or kills the locker in response.
-
-If your system is already set up to sleep after a timeout and suspend when you close the lid, this may be all you need.
-
-Start xss-lock when you start your window manager, passing it the name of the screen locker you want to use. So you could put this in your ~/.xinitrc file:
-```
-xss-lock -- i3lock -n -c 000000
-```
-
-Or if running the i3 windor manager, put this in your ~/.i3/config file:
-```
-exec --no-startup-id xss-lock -- i3lock -n -c 000000
-```
-
-#### Screen lock with xautolock
-This uses [xsecurelock](https://github.com/google/xsecurelock) (recommended screen lock) together with [xautolock](http://linux.die.net/man/1/xautolock) (simple away command runner tool) to lock the screen after 10 minutes when away from home network. It also suspends after 30 mins, adds a hot corner to block locking (useful if watching a video, for example) and adds a notification (using `dunst` and `notify-send`) before locking. Note that pretty much all of these pieces are optional (you could use `gnome-screensaver` or `xscreensaver` for away detection for instance), but using `xsecurelock` for locking is strongly recommended since other lock screens have had vunerabilities.
-
-Install packages as needed (`dunst` and `libnotify` optional -- you may already have a notification system):
-
-##### Arch
-```
-$ pacaur -S xsecurelock-git xautolock dunst libnotify
-```
-
-Next make sure dunst (if using for notifications) and xautolock (if using) are started on X login.
-For example, you can adapt the following to start when your window manager starts, e.g., add to `~/.xinitrc`:
-```
-dunst &
-xautolock -time 10 -corners -000 -locker '/usr/bin/xsecurelock auth_pam_x11 saver_blank' -killtime 30 -killer 'systemctl suspend' -notify 30 -notifier "notify-send -- 'Locking screen in 30 seconds'" &
-```
-
 ### YubiKey removal lock
 For additional security, you may want to immediately lock the screen when the YubiKey is removed.
 
@@ -161,21 +175,4 @@ su $USER -c 'xautolock -locknow' &
 Next, create (with sudo) a device notification file `/etc/udev/rules.d/90-yubikey.rules`:
 ```
 ACTION=="remove", ATTRS{idVendor}=="1050", RUN+="/home/$USER/bin/ykgone"
-```
-
-### Away detection ideas
-Exceptions to the "idle timeout lock" can be made if you are on your home network and feel that it is secure. Adapt the below script if you only want to lock your screen when you are away from home.
-
-Assuming `~/bin/` is in your `$PATH`, create executable file `~/bin/out-lock` and replace `xsecurelock` or `i3lock` above with `~/bin/out-lock`:
-```
-#!/bin/sh
-# Not home (you will need to adjust to some reliable/secure test for your home network).
-# In this case, an internal NAT addressable file hoe.txt has the given sha256sum value.
-if ! curl -s 'http://192.168.1.99/home.txt' | sha256sum | grep 6094dd1d56b9d8638bc0e8e630683787151b81320d81568d97ec8daecb370bca > /dev/null; then
-  # Not already locked.
-  if ! pidof xsecurelock > /dev/null; then
-    # Lock screen.
-    /usr/bin/xsecurelock auth_pam_x11 saver_blank
-  fi
-fi
 ```
