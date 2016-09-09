@@ -114,9 +114,11 @@ With more work captured in the cloud by Slack, Gmail, Google Drive, GitHub, etc.
 
 Consider committing your personalization files (like `~/.bashrc`) into a Git repository. Just make sure that you do *not* commit any files that may contain private keys or passwords.
 
-Also, take care that you do *not* backup any company or client sensitive files or data as it is important that that be completely deleted from your machine(s) when you stop working for that client.
+While it's preferable that you *not* backup any company or client sensitive files or data, it is critical that such data is completely deleted from your machine(s) when you stop working for that client.
 
-Finally, if you use any backup mechanism more complicated than simply copying the files to another medium, ensure that you know how to restore the files, too, as backups are worthless if you can't retrieve them.
+If you use any backup mechanism more complicated than simply copying the files to another medium, ensure that you know how to restore the files, too, as backups are worthless if you can't retrieve them.
+
+Finally, there is no good reason not to be making backups: a one _terabyte_ external USB drive costs less than $60 on Amazon.
 
 ### Securely Delete Files and Wipe Disks
 
