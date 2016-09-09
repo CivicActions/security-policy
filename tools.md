@@ -94,7 +94,9 @@ Social engineering is the most common attack vector used to compromise computer 
     - Don’t automatically connect to unknown WiFi hotspots
     - Confirm the network name - know the name of your hotspot!
     - Turn on your local firewall
-    - As usual, never enter your name or password information when on an insecure connection
+    - As usual, never enter your name or password information:
+        - when on an insecure (non-HTTPS or SSL encrypted) connection, or
+        - to a site that you have not verified is correct (by examining at the URL)
 
 ## Keep Your Systems Up-to-date
 
