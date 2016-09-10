@@ -119,9 +119,9 @@ $ neoman
 ```
 
 ## Advanced: Locking your Machine with YubiKey
-This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you **don't lock yourself out!**
+This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you **don't lock yourself out!** (If you do get locked out, you'll have to boot with a live CD and undo the changes in /etc/pam.d/. As this requires a reboot, your [encrypted disk](/tools.md#disk-encryption-and-storage-management) will require its passphrase again, which is the key to secuity here.)
 
-This is required of CivicActions "privileged users" such as System Administrators.
+This is required of CivicActions "privileged users" such as System Administrators, and it is our intention that it be standard practice for all CivicActions employees and contractors.
 
 ### Installing the Yubico libpam module
 In order to connect your YubiKey to the screen locking software on your computer, you need to 
