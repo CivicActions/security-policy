@@ -10,20 +10,13 @@ Table of Contents
 * [Screen lock when idle or lid closed (X server)](#screen-lock-when-idle-or-lid-closed-x-server)
   * [Screen lock with xss-lock](#screen-lock-with-xss-lock)
   * [Screen lock with xautolock](#screen-lock-with-xautolock)
-	* [Arch](#arch)
   * [Away detection ideas](#away-detection-ideas)
 * [Basic YubiKey Setup](#basic-yubikey-setup)
   * [Install packages](#install-packages)
-	* [Arch](#arch-1)
-	* [Fedora](#fedora)
-	* [Ubuntu, Xubuntu](#ubuntu-xubuntu)
   * [Personalize your YubiKey](#personalize-your-yubikey)
 	* [Add a challenge-response slot](#add-a-challenge-response-slot)
-* [Advanced: Locking your Machine with YubiKey](#advanced-locking-your-machine-with-yubikey)
+* [Locking your Machine with YubiKey](#locking-your-machine-with-yubikey)
   * [Installing the Yubico libpam module](#installing-the-yubico-libpam-module)
-	* [Arch](#arch-2)
-	* [Fedora](#fedora-1)
-	* [Ubuntu/Xubuntu](#ubuntuxubuntu)
   * [Set up PAM TFA](#set-up-pam-tfa)
   * [YubiKey removal lock](#yubikey-removal-lock)
 
@@ -118,7 +111,7 @@ $ neoman
 ​$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
 ```
 
-## Advanced: Locking your Machine with YubiKey
+## Locking your Machine with YubiKey
 This will require the Yubikey (Two Factor Authentication) to be inserted to authenticate via PAM (login, sudo or screen unlock). Test this carefully in an alternate console session to ensure you **don't lock yourself out!** (If you do get locked out, you'll have to boot with a live CD and undo the changes in /etc/pam.d/. As this requires a reboot, your [encrypted disk](/tools.md#disk-encryption-and-storage-management) will require its passphrase again, which is the key to secuity here.)
 
 This is required of CivicActions "privileged users" such as System Administrators, and it is our intention that it be standard practice for all CivicActions employees and contractors.
