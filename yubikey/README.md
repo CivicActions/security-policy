@@ -5,7 +5,7 @@ Notes on installing and setting up your *YubiKey 4* for various platforms and ap
 Table of Contents
 =================
 
-* [Introduction](#Introduction)
+* [Introduction](#introduction)
   * [Operation](#operation)
   * [Security Hints](#security-hints)
 * [Basic Setup (do this first)](#basic-setup-do-this-first)
@@ -28,6 +28,7 @@ The YubiKey is a hardware device manufactured by Yubico that provides a hardware
 ### Security Hints
 - If you trust your environment (like at home) you can keep the YubiKey near or even plugged into your computer.
 - In low trust environments (coffee shops, hotel rooms, etc.) keep your YubiKey with you at all times (in a pocket or purse). If your computer is compromised, it won't be accessible without the YubiKey that you have on you.
+- Do not use SMS text messages for two-factor authentication.
 
 ## Basic Setup (do this first)
 Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. Also included are some more advanced instructions that enable locking your screen with your YubiKey.
@@ -37,14 +38,22 @@ Before your YubiKey can act as a second (hardware) authentication token for appl
 ## Enable YubiKey TFA for applications
 
 ### Lastpass
-This requires a Yubikey OTP (cover the button for approximately one second) on laptop/desktop and a NFC contact on mobile to unlock LastPass.
+This requires a Yubikey token (cover the button for approximately one second) on laptop/desktop to unlock LastPass.
 - My Vault -> Account Settings -> Multifactor Options
-  - Set up one free option (e.g., Google Authenticator or Duo) - this is a useful backup
-  - YubiKey (an easier option) is available when using LastPass Premium ($12/year)
-- Set:
-  - "Permit Offline Access" ==> "Disallowed"
-  - "Enabled" ==> "Yes"
-- If you have a *YubiKey Neo* (not our standard model, the *YubiKey 4*) and your phone supports NFC, you can touch the Neo against your phone to unlock on mobile.
+  - Set up one free option (e.g., [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - this is a useful backup
+  - YubiKey (an easier option) is available when using [LastPass Premium](https://lastpass.com/yubico/) ($12/year)
+    - Select the YubiKey option.
+    - Insert the YubiKey device into a USB port on your computer.
+    - Focus your cursor on the "YubiKey #1" field.
+    - Press the button on the YubiKey device.
+    - A long string of dots should appear in the YubiKey #1 field.
+    - Change the "YubiKey Authentication" status to "Enabled"
+    - Set "Enabled" ==> "Yes"
+    - Set "Permit Offline Access" ==> "Disallow"
+	- Press the Update button
+    - Enter your LastPass master password and press Confirm.
+    - YubiKey is now enabled for your LastPass account.
+- If you have a *YubiKey Neo* (CivicActions uses the *YubiKey 4* model) and your phone supports NFC, you can touch the Neo against your phone to unlock on mobile.
 
 ### Google
 For each Google account you have:
