@@ -8,7 +8,7 @@ Table of Contents
 * [Introduction](#introduction)
   * [Operation](#operation)
   * [Security Hints](#security-hints)
-* [Basic Setup (do this first)](#basic-setup-do-this-first)
+* [Securing your Laptop](#securing-your-laptop)
   * [GNU/Linux specific instructions](linux.md)
   * [Mac OS X specific instructions](macosx.md)
 * [Enable YubiKey TFA for applications](#enable-yubikey-tfa-for-applications)
@@ -30,7 +30,7 @@ The YubiKey is a hardware device manufactured by Yubico that provides a hardware
 - In low trust environments (coffee shops, hotel rooms, etc.) keep your YubiKey with you at all times (in a pocket or purse). If your computer is compromised, it won't be accessible without the YubiKey that you have on you.
 - Do not use SMS text messages for two-factor authentication.
 
-## Basic Setup (do this first)
+## Securing your Laptop
 Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. Also included are some more advanced instructions that enable locking your screen with your YubiKey.
 - [GNU/Linux specific instructions](linux.md)
 - [Mac OS X specific instructions](macosx.md)
