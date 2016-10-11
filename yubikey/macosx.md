@@ -14,7 +14,9 @@ Table of Contents
 * [Away detection ideas](linux.md#away-detection-ideas) (optional, on GNU/Linux page)
 
 ## Install apps
-_See: https://www.yubico.com/why-yubico/for-businesses/computer-login/mac-os-login/_
+_See:
+- https://www.yubico.com/why-yubico/for-businesses/computer-login/mac-os-login/_
+- https://www.yubico.com/2016/09/yubikey-smart-card-support-for-macos-sierra-2/
 
 _tbd..._
 
