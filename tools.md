@@ -66,6 +66,12 @@ There are many hardware and software tools for creating secure “one time passw
 
 As a final step when setting up Two Factor Authentication with most services (Google, LastPass, GitHub, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure.
 
+### Connecting to you CivicActions' Google Account from Sevices/Apps after TFA has been Enabled 
+
+Some applications and services may need to connect to your Civicactions google account but they might not be able to handle TFA. An example of this would be a personal Gmail account trying to send e-mails through your civicactions' account. For this purpose Google has created something called [App Passwords](https://support.google.com/accounts/answer/185833?hl=en). [App Passwords](https://support.google.com/accounts/answer/185833?hl=en) allows you to create a unique password for each of your services/apps. If this password is used while authenticating your service/app to access your CivicActions' account it will bypass TFA.
+
+There are some instructions at https://support.google.com/accounts/answer/185833?hl=en on how to use App Passwords.
+
 ## IT: Sharing Service Accounts
 
 - If a service allows individual accounts, use only individual accounts and not shared credentials.
