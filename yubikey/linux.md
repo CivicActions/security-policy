@@ -149,20 +149,18 @@ For additional security, you may want to immediately lock the screen when the Yu
 
 This locks the laptop immediately when any Yubikey is removed. If you are not using xautolock as your "away detector", replace xautolock with a command to trigger your screen lock with the "away detector" that you do use. This is inspired by https://vtluug.org/wiki/Yubikey
 
-Assuming `~/bin/` is in your `$PATH`, create executable file `~/bin/ykgone`:
+As your login user, create executable file `~/bin/ykgone`:
 ```
 #!/bin/bash
-USER=`whoami`
-getuser ()
-    {
-     export DISPLAY=":0"
-     user=$(who | grep "$DISPLAY" | awk '{print $1}' | tail -n1)
-     export XAUTHORITY=/home/$USER/.Xauthority
-     eval $1=$USER
-    }
-
-getuser "$USER"
-su $USER -c 'xautolock -locknow' &
+USER=$(stat -c '%U' "$0")
+if usb-devices | fgrep Vendor=1050; then
+  echo "Yubikey present"
+else
+  echo "Yubikey not present, locking"
+  export DISPLAY=":0"
+  export XAUTHORITY=/home/$USER/.Xauthority
+  su $USER -c 'xautolock -locknow' &
+fi
 ```
 
 Next, create (with sudo) a device notification file `/etc/udev/rules.d/90-yubikey.rules`:
