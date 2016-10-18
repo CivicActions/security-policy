@@ -32,7 +32,7 @@ A password manager will enable you to have unique, strong passwords for every se
 - It is fine (and perhaps preferable, because your browser can only use one LastPass account at a time) to use a personal email address to create your LastPass account. 
 
 ### Disable Browser Password Autofill
-LastPass provides secure password management especially when unlocked via Two Factor Authentication. Storing new passwords created in LastPass in your browser completely defeats this security, enabling anyone with access to your browser access to all your sites. If asked by your browser "Do you want to save this password in your browser?" answer no. Better, disable this action altogether:
+LastPass provides secure password management especially when unlocked via Two Factor Authentication. Storing new passwords created in LastPass in your browser completely defeats this security, enabling anyone with access to your browser access to all your sites. If asked by your browser "Do you want to save this password in your browser?" answer "**No**". Better, disable this action altogether:
 - In Chrome, go to chrome://settings/ and uncheck "Offer to save your web passwords"
 - In Firefox, go to about:preferences#security and uncheck "Remember logins for sites"
 
@@ -60,6 +60,7 @@ There are many hardware and software tools for creating secure “one time passw
 - Google: [2 Step Verification](https://support.google.com/accounts/topic/28786?hl=en&ref_topic=3382253)
 - GitHub (especially for your [CivicAction account](https://github.com/CivicActions)): [Securing your account with two-factor authentication (2FA)](https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/)
 - GitLab: See [your profile](https://git.civicactions.net/profile/account)
+- iCloud: [Two-factor authentication for Apple ID](https://support.apple.com/en-us/HT204915)
 - Slack: [Enabling two-factor authentication](https://get.slack.help/hc/en-us/articles/204509068-Enabling-two-factor-authentication#enablingtwofactor-authentication)
 
 ### TFA Backup Codes
