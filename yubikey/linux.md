@@ -11,10 +11,6 @@ Table of Contents
   * [Screen lock with xss-lock](#screen-lock-with-xss-lock)
   * [Screen lock with xautolock](#screen-lock-with-xautolock)
   * [Away detection ideas](#away-detection-ideas)
-* [Basic YubiKey Setup](#basic-yubikey-setup)
-  * [Install packages](#install-packages)
-  * [Personalize your YubiKey](#personalize-your-yubikey)
-	* [Add a challenge-response slot](#add-a-challenge-response-slot)
 * [Locking your Machine with YubiKey](#locking-your-machine-with-yubikey)
   * [Installing the Yubico libpam module](#installing-the-yubico-libpam-module)
   * [Set up PAM TFA](#set-up-pam-tfa)
@@ -71,44 +67,6 @@ if ! curl -s 'http://192.168.1.99/home.txt' | sha256sum | grep 6094dd1d56b9d8638
     /usr/bin/xsecurelock auth_pam_x11 saver_blank
   fi
 fi
-```
-
-## Basic YubiKey Setup
-
-### Install packages
-
-Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey.
-
-#### Arch
-_See also: https://wiki.archlinux.org/index.php/yubikey_
-```
-$ pacaur -S perl-net-ldap-server    # this is a prerequisite
-$ pacaur -S yubikey-neo-manager-git
-```
-
-#### Fedora
-_See also: https://fedoraproject.org/wiki/Using_Yubikeys_with_Fedora_
-```
-dnf copr enable jjelen/yubikey-neo-manager 
-dnf copr enable spartacus06/yubikey-utils 
-dnf install yubikey-neo-manager yubioath-desktop yubikey-personalization-gui
-```
-
-#### Ubuntu, Xubuntu
-_See e.g.: https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html_
-
-tbd...
-
-### Personalize your YubiKey
-This allows you to use your Yubikey with Google TFA (new fangled U2F), as well as LastPass (which uses the OTP application).
-_Note: these checkboxes may already be checked on YubiKey 4 devices._
-
-#### Add a challenge-response slot
-```
-$ neoman
-# Enable OTP, U2F, CCID checkboxes if needed, follow instructions to add and remove key.
-
-​$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
 ```
 
 ## Locking your Machine with YubiKey

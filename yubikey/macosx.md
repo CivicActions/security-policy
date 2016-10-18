@@ -7,7 +7,6 @@ Please help make this page more useful by adding links you found useful (describ
 Table of Contents
 =================
 * [Install apps](#install-apps)
-* [Personalize your YubiKey](#personalize-your-yubikey)
 * [Set up PAM TFA](#set-up-pam-tfa)
 * [Screen lock on lid closed](#screen-lock-on-lid-closed)
 * [YubiKey removal lock](#yubikey-removal-lock) (optional)
@@ -20,15 +19,11 @@ See:
 
 _tbd..._
 
-## Personalize your YubiKey
-
-_tbd..._
-
 ## Set up PAM TFA
 
 _tbd..._
 
-## Screen lock on lid closed
+## Screen lock on lid close or 15 minutes idle
 
 _tbd..._
 

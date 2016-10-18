@@ -8,14 +8,23 @@ Table of Contents
 * [Introduction](#introduction)
   * [Operation](#operation)
   * [Security Hints](#security-hints)
-* [Securing your Laptop](#securing-your-laptop)
-  * [GNU/Linux specific instructions](linux.md)
-  * [Mac OS X specific instructions](macosx.md)
+* [Basic YubiKey Setup](#basic-yubikey-setup)
+  * [Install packages](#install-packages)
+	* [Arch](#arch)
+	* [Fedora](#fedora)
+	* [Ubuntu, Xubuntu](#ubuntu-xubuntu)
+	* [Mac OS X](#mac-os-x)
+  * [Personalize your YubiKey](#personalize-your-yubikey)
+	* [GNU/Linux command line](#gnulinux-command-line)
+	* [Mac OSX YubiKey tool](#mac-osx-yubikey-tool)
 * [Enable YubiKey TFA for applications](#enable-yubikey-tfa-for-applications)
   * [Lastpass](#lastpass)
   * [Google](#google)
   * [AWS Root Account](#aws-root-account)
   * [AWS IAM Account](#aws-iam-account)
+* [Securing your Laptop](#securing-your-laptop)
+  * [GNU/Linux specific instructions](linux.md)
+  * [Mac OS X specific instructions](macosx.md)
   
 ## Introduction
 
@@ -30,10 +39,53 @@ The YubiKey is a hardware device manufactured by Yubico that provides a hardware
 - In low trust environments (coffee shops, hotel rooms, etc.) keep your YubiKey with you at all times (in a pocket or purse). If your computer is compromised, it won't be accessible without the YubiKey that you have on you.
 - Do not use SMS text messages for two-factor authentication.
 
-## Securing your Laptop
-Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. Also included are some more advanced instructions that enable locking your screen with your YubiKey.
-- [GNU/Linux specific instructions](linux.md)
-- [Mac OS X specific instructions](macosx.md)
+## Basic YubiKey Setup
+Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. 
+
+### Install packages
+#### Arch
+_See also: https://wiki.archlinux.org/index.php/yubikey_
+```
+$ pacaur -S perl-net-ldap-server    # this is a prerequisite
+$ pacaur -S yubikey-neo-manager-git
+```
+
+#### Fedora
+_See also: https://fedoraproject.org/wiki/Using_Yubikeys_with_Fedora_
+```
+dnf copr enable jjelen/yubikey-neo-manager 
+dnf copr enable spartacus06/yubikey-utils 
+dnf install yubikey-neo-manager yubioath-desktop yubikey-personalization-gui
+```
+
+#### Ubuntu, Xubuntu
+_See e.g.: https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html_
+
+tbd...
+
+#### Mac OS X
+Download and install the [YubiKey Personalization Tool](https://itunes.apple.com/us/app/yubikey-personalization-tool/id638161122?mt=12) from the Mac App Store at [https://itunes.apple.com/us/app/yubikey-personalization-tool](https://itunes.apple.com/us/app/yubikey-personalization-tool/id638161122?mt=12)
+
+### Personalize your YubiKey
+This allows you to use your Yubikey with Google TFA (new fangled U2F), as well as LastPass (which uses the OTP application).
+
+#### GNU/Linux command line
+```
+$ neoman
+# Enable OTP, U2F, CCID checkboxes if needed, follow instructions to add and remove key.
+
+​$ ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible
+```
+
+#### Mac OSX YubiKey tool
+_This should be straightforward, but waiting for a pull request that clearly explains how to:_
+
+- Enable `OTP`, `U2F` & `CCID`
+- Personalize **Configuration Slot 2** with options:
+  - `chal-resp` (Set challenge-response mode)
+  - `chal-hmac` (Generate HMAC-SHA1 challenge responses)
+  - `hmac-lt64` (Calculate HMAC on less than 64 bytes input)
+  - `serial-api-visible` (Allow serial number to be read using an API call)
 
 ## Enable YubiKey TFA for applications
 
@@ -77,3 +129,8 @@ For each AWS account you have:
 - Use Google Authenticator app to scan the QR code, and enter the reponse code
 - then close and reopen the app and enter the second response code.
 - _using YubiKey untested - don't have Yubikey Authenticator set up_
+
+## Securing your Laptop
+Your laptop should lock (require a password to resumt) on screen close and after 15 minutes idle time. Here are additional instructions to enable locking your screen with your YubiKey.
+- [GNU/Linux specific instructions](linux.md)
+- [Mac OS X specific instructions](macosx.md)
