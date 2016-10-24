@@ -5,20 +5,31 @@ This is an appendix to the [CivicActions Security Policy](/README.md) containing
 _This is currently - and probably always will be - a work in progress. Pull Requests welcome._
 
 ## Table of Contents
-1.  [Password Management Tools](#password-management-tools)
+
+1.  [Securing your Laptop](#securing-your-laptop)
+2.  [Password Management Tools](#password-management-tools)
     - [LastPass](#lastpass)
     - [Disable Browser Password Autofill](#disable-browser-password-autofill)
-2.  [Use Two Factor (or 2-Step) Authentication (TFA, 2FA)](#use-two-factor-or-2-step-authentication-tfa-2fa)
+3.  [Use Two Factor (or 2-Step) Authentication (TFA, 2FA)](#use-two-factor-or-2-step-authentication-tfa-2fa)
     - [Two-Factor Authenticators](#two-factor-authenticators)
     - [Partial List of TFA Services](#partial-list-of-tfa-services)
     - [TFA Backup Codes](#tfa-backup-codes)
-3.  [IT: Sharing Service Accounts](#it-sharing-service-accounts)
-4.  [Phishing and Social Engineering](#phishing-and-social-engineering)
-5.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
-6.  [Disk Encryption and Storage Management](#disk-encryption-and-storage-management)
+4.  [IT: Sharing Service Accounts](#it-sharing-service-accounts)
+5.  [Phishing and Social Engineering](#phishing-and-social-engineering)
+6.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
+7.  [Disk Encryption and Storage Management](#disk-encryption-and-storage-management)
+      - [Software Disk Encryption](#software-disk-encryption)
+        - [Mac OSX: FileVault 2](#mac-osx-filevault-2)
+        - [Windows: BitLocker or DiskCryptor](#windows-bitlocker-or-diskcryptor)
+        - [GNU/Linux: use the hardware](#gnulinux-use-the-hardware)
     - [Backups](#backups)
     - [Securely Delete Files and Wipe Disks](#securely-delete-files-and-wipe-disks)
-7.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
+8.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
+
+## Securing your Laptop
+Your laptop should lock (require a password to resume) on screen close and after 15 minutes idle time.
+- [GNU/Linux specific instructions](https://github.com/CivicActions/security-policy/blob/master/yubikey/linux.md#screen-lock-when-idle-or-lid-closed-x-server)
+- [Mac OS X specific instructions](https://github.com/CivicActions/security-policy/blob/master/yubikey/macosx.md#screen-lock-on-lid-closed)
 
 ## Password Management Tools
 
@@ -113,7 +124,23 @@ One of the best ways to protect yourself from being hacked (other than via a soc
 
 ## Disk Encryption and Storage Management
 
-Most modern disks (and SSDs) have self-encrypting drive (SED) technology built in. CivicActions highly recommends SSDs for their increased speed and the hardware-based encryption (self-encrypting drive or "SED" technology) that will protect the drive when the machine is off. This is particularly important for laptops that can be easily stolen. When you buy a new disk or configure a new laptop, turn on the disk encryption. Some of CivicActions' clients will demand it.
+Most modern disks (and SSDs) have self-encrypting drive (SED) technology built in. CivicActions highly recommends SSDs for their increased speed and the hardware-based encryption (self-encrypting drive or "SED" technology) that will protect the drive when the machine is off. This is particularly important for laptops that can be easily stolen. When you buy a new disk or configure a new laptop, turn on the disk encryption. Some of CivicActions' clients will demand it. (Contact your product manager to see if you are eligble for a hard disk rebate.)
+
+### Software Disk Encryption
+
+If you haven't set up your hard drive with hardware encryption, there are software alternatives that you can use until you get yourself a new drive. Note that these methods incur a small performance penalty with respect to hardware encryption, but they are relatively quick and easy to set up.
+
+#### Mac OSX: FileVault 2
+
+Open System Preferences, click on the Security & Privacy icon, and switch to the FileVault tab. If you see a button that says "Turn Off FileVault..." then congratulations, your disk is already encrypted. Otherwise, click the lock icon in the bottom left so you can make changes, and click "Turn On FileVault...". Google "Filevault" for more information.
+
+#### Windows: BitLocker or DiskCryptor
+
+To see if BitLocker is supported on your version of Windows, open up Windows Explorer, right-click on C drive, and see if you have a "Turn on BitLocker" option (if you see a "Manage BitLocker" option, then congratulations, your disk is already encrypted.) If you don't have BitLocker available, google the open source DiskCryptor.
+
+#### GNU/Linux: use the hardware
+
+Unline Mac and Windows, you can only encrypt your drive during system installation. Might as well buy a new SSD...
 
 ### Backups
 

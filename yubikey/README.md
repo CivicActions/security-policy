@@ -131,6 +131,6 @@ For each AWS account you have:
 - _using YubiKey untested - don't have Yubikey Authenticator set up_
 
 ## Securing your Laptop
-Your laptop should lock (require a password to resumt) on screen close and after 15 minutes idle time. Here are additional instructions to enable locking your screen with your YubiKey.
+Your laptop should lock (require a password to resume) on screen close and after 15 minutes idle time.
 - [GNU/Linux specific instructions](linux.md)
 - [Mac OS X specific instructions](macosx.md)
