@@ -25,10 +25,12 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 A password manager will enable you to have unique, strong passwords for every service that you log into. Good password managers will generate new passwords for you, auto-fill web forms, allow extra protection for high-security accounts (like banking), and more. Choose a password manager that encrypts locally (in your browser, so you don’t have to trust the provider to keep their data safe) and that has iPhone and Android apps that will auto-sync with the manager. At CivicActions, we currently recommend LastPass as it is the most full-featured, but we are keeping a close eye on the FOSS KeePass and Password Safe solutions.
 
 ### LastPass
-- The [LastPass](https://lastpass.com/) password generator can easily create and maintain hundreds of different 16 character (or more!) passwords. And LastPass has free iPhone and Android apps.
-- LastPass is used by the CivicActions System Admins and Infrastructure Support Team.
+- The [LastPass](https://lastpass.com/) password generator can easily create and maintain hundreds of different passwords. And LastPass has free iPhone and Android apps.
+  - We recommend a minimum of 16 character passwords using all character types. (Some old systems will need you to lessen this level of security, but those are few.)
+  - Once you have all your passwords in LastPass, take the "Security Challenge" - your score should be 80% or higher.
+- LastPass is required for members of the CivicActions System Admins and Infrastructure Support Team.
 - We recommend LastPass premium but do not require it. A premium account will enable unlimited sync across your devices and more robust two-factor authentication (e.g. with a [YubiKey](https://github.com/CivicActions/security-policy/blob/master/yubikey/README.md) token).
-    - Set up Two Factor Authentication on your LastPass Account (see below). LastPass will be storing all your passwords, so make it secure.
+- Set up Two Factor Authentication on your LastPass Account (see below). LastPass will be storing all your passwords, so make it secure.
 - It is fine (and perhaps preferable, because your browser can only use one LastPass account at a time) to use a personal email address to create your LastPass account. 
 
 ### Disable Browser Password Autofill
