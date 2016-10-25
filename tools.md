@@ -18,7 +18,7 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
 5.  [Phishing and Social Engineering](#phishing-and-social-engineering)
 6.  [Keep Your Systems Up-to-date](#keep-your-systems-up-to-date)
 7.  [Disk Encryption and Storage Management](#disk-encryption-and-storage-management)
-      - [Software Disk Encryption](#software-disk-encryption)
+    - [Software Disk Encryption](#software-disk-encryption)
         - [Mac OSX: FileVault 2](#mac-osx-filevault-2)
         - [Windows: BitLocker or DiskCryptor](#windows-bitlocker-or-diskcryptor)
         - [GNU/Linux: use the hardware](#gnulinux-use-the-hardware)
