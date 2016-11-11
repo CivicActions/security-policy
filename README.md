@@ -64,7 +64,7 @@ It is each person’s responsibility to ensure they understand and follow the da
 
 Broadly, dealing with confidential information involves - to the maximum extent feasible - limiting the number of places (physical and logical) where it is stored, and secondly ensuring that each of those places is as secure as reasonably possible, to prevent unauthorized access.
 
-Users are responsible for carefully tracking any confidential information stored on personal devices (including backup/offline storage). Periodically during and after each project, confidential information stored on personal devices should be reviewed, and anything that is no longer needed should be deleted (after being archived to a CivicActions service, if needed). Users should ensure files are actually deleted (and not stored in a recycle/trash area), ideally running [a secure delete on the files](/tools.md#securely-delete-files-and-wipe-disks), which is available out of the box on OS X and GNU/Linux based systems.
+Users are responsible for carefully tracking any confidential information stored on personal devices (including backup/offline storage). Periodically during and after each project, confidential information stored on personal devices should be reviewed, and anything that is no longer needed should be deleted (after being archived to a CivicActions service, if needed). Users should ensure files are actually deleted (and not stored in a recycle/trash area), ideally running [a secure delete on the files](https://github.com/CivicActions/security-policy/blob/master/tools#securely-delete-files-and-wipe-disks), which is available out of the box on OS X and GNU/Linux based systems.
 
 There are also a number of security concerns with non-confidential information. Even though we don’t need to protect it from viewing, it is critical that any copies in active use are protected from unauthorized changes.
 
@@ -150,7 +150,7 @@ A password manager (such as LastPass) can easily create and maintain hundreds of
 
 Modern password managers - and many other services such as Google Apps, GitHub, Slack and more) now accept Two Factor Authentication that can greatly increase the security of the protected assets. CivicActions requires TFA for access to the CivicActions Google Apps such as GMail and Docs as well as OATH-authenticated apps such as GitLab.
 
-Please see the [Security Awareness and Tools](/tools.md) document for details on these subjects and more.
+Please see the [Security Awareness and Tools](https://github.com/CivicActions/security-policy/blob/master/tools) document for details on these subjects and more.
 
 ### Handling Passwords
 
@@ -245,7 +245,7 @@ IT team system administrators working on CivicActions servers must also:
 - Ensure the Hurricane Electric and RimuHosting access list (that controls remote hands and physical server access) is maintained.
 
 ## Security Awareness and Tools
-We maintain a [Security Awareness and Tools](/tools.md) document that dives deeper into some additional topics, including:
+We maintain a [Security Awareness and Tools](https://github.com/CivicActions/security-policy/blob/master/tools) document that dives deeper into some additional topics, including:
 
 - Password Management Tools
 - Two Factor Authentication
