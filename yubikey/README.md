@@ -88,6 +88,7 @@ _This should be straightforward, but waiting for a pull request that clearly exp
   - `serial-api-visible` (Allow serial number to be read using an API call)
 
 ## Enable YubiKey TFA for applications
+_See also: [How to Secure Your Google, Dropbox, and GitHub Accounts With a U2F Key](http://www.howtogeek.com/232360/how-to-secure-your-google-dropbox-and-github-accounts-with-a-u2f-key/)_
 
 ### Lastpass
 This requires a Yubikey token (cover the button for approximately one second) on laptop/desktop to unlock LastPass.

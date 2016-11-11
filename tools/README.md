@@ -25,9 +25,12 @@ _This is currently - and probably always will be - a work in progress. Pull Requ
     - [Backups](#backups)
     - [Securely Delete Files and Wipe Disks](#securely-delete-files-and-wipe-disks)
 8.  [Drupal Best Practices and Writing Secure Code](#drupal-best-practices-and-writing-secure-code)
+9.  [Protecting Your Privacy](#protecting-your-privacy)
 
 ## Securing your Laptop
-Your laptop should lock (require a password to resume) on screen close and after 15 minutes idle time.
+The operating system and software applications on your laptop - and all computers, phones, tablets, etc. in your house - should be kept up to date with new versions and security patches that ensure it presents a minimal attack surface to potential adversaries. (This is mentioned in the [Security Policy](https://github.com/CivicActions/security-policy/) but is worth repeating.)
+
+Additionally, your laptop should lock (require a password to resume) on screen close and after 15 minutes idle time.
 - [GNU/Linux specific instructions](https://github.com/CivicActions/security-policy/blob/master/yubikey/linux.md#screen-lock-when-idle-or-lid-closed-x-server)
 - [Mac OS X specific instructions](https://github.com/CivicActions/security-policy/blob/master/yubikey/macosx.md#screen-lock-on-lid-closed)
 
@@ -178,3 +181,8 @@ Erasing an entire disk:
 CivicActions Drupal Developers are expected to know, understand and integrate into their work:
 - [Drupal coding standards and best practices](https://www.drupal.org/developing/best-practices)
 - [How to write secure code in Drupal](https://www.drupal.org/writing-secure-code)
+
+## Protecting Your Privacy
+
+CivicActions believes that your privacy is a right, and that private communications can be beneficial to business. Here's some tips on how FOSS can help:
+- [Protecting Your Privacy with Encryption](https://github.com/CivicActions/security-policy/blob/master/tools/encryption.md)
