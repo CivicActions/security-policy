@@ -137,7 +137,7 @@ If you haven't set up your hard drive with hardware encryption, there are softwa
 
 Open System Preferences, click on the Security & Privacy icon, and switch to the FileVault tab. If you see a button that says "Turn Off FileVault..." then congratulations, your disk is already encrypted. Otherwise, click the lock icon in the bottom left so you can make changes, and click "Turn On FileVault...". Google "Filevault" for more information.
 
-Much more technical detail on locking securing your Mac: [macOS-Security-and-Privacy-Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide/blob/master/README.md). _This is useful but well beyond what is required by CivicActions._
+Much more technical detail on securing your Mac: [macOS-Security-and-Privacy-Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide/blob/master/README.md). _This is useful but well beyond what is required by CivicActions._
 
 #### Windows: BitLocker or DiskCryptor
 
