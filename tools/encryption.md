@@ -1,10 +1,13 @@
 # Protecting Your Privacy with Encryption
 
-The following offers a brief overview of a few FOSS encryption tools that you can download and install to enhance the privacy of your interactions online. Besides the fact that you have a right to your privacy and are not committing any crimes, taking steps to ensure your privacy in a world that is increasingly fearful of others and creating new surveillance techniques is empowering at the least. For more, see the excellent and easy-to-read blog post _[Why We Encrypt](https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html)_ by noted cryptographer Bruce Schneier.
+The following offers a brief overview of a few FOSS encryption tools that you can download and install to enhance the privacy of your interactions online.
+
+> This is important. If we only use encryption when we're working with important data, then encryption signals that data's importance. If only dissidents use encryption in a country, that country's authorities have an easy way of identifying them. But if everyone uses it all of the time, encryption ceases to be a signal. No one can distinguish simple chatting from deeply private conversation. The government can't tell the dissidents from the rest of the population. Every time you use encryption, you're protecting someone who needs to use it to stay alive.
+> - _[Why We Encrypt](https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html)_ by Bruce Schneier
 
 This document is light in content but the links contain additional documentation that may be helpful. An hour or two of your time should be sufficient to set up your GnuPG key pair and encrypted email communications.
 
-If you'd like some background on how it works, start by reading [An Introduction to Public Key Cryptography and PGP](https://ssd.eff.org/en/module/introduction-public-key-cryptography-and-pgp), a [Surveillance Self-Defense](https://ssd.eff.org/en) tutorial from your friends at the [Electronic Frontier Foundation](https://www.eff.org/) [[Donate!](https://supporters.eff.org/donate/)]
+If you'd like some background on how encryption works, start by reading [An Introduction to Public Key Cryptography and PGP](https://ssd.eff.org/en/module/introduction-public-key-cryptography-and-pgp), a [Surveillance Self-Defense](https://ssd.eff.org/en) (also an excellent read) tutorial from your friends at the [Electronic Frontier Foundation](https://www.eff.org/) [[Donate!](https://supporters.eff.org/donate/)]
 
 Finally, keep an eye out for the dangerous [Burr-Feinstein Anti-Encryption Bill](https://www.techdirt.com/articles/20160527/08343534565/burr-feinstein-anti-encryption-bill-has-no-support-wont-be-moving-forward-anytime-soon.shtml) (also [here](https://www.wired.com/2016/04/senates-draft-encryption-bill-privacy-nightmare/), [here](https://www.engadget.com/2016/09/10/anti-encryption-bill-proposed-changes/) and [here](https://www.google.com/webhp#q=burr+feinstein+encryption+bill)) and be prepared to take action when it resurfaces to protect your rights to privacy and security.
 
