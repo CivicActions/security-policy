@@ -51,6 +51,7 @@ A password manager will enable you to have unique, strong passwords for every se
 LastPass provides secure password management especially when unlocked via Two Factor Authentication. Storing new passwords created in LastPass in your browser completely defeats this security, enabling anyone with access to your browser access to all your sites. If asked by your browser "Do you want to save this password in your browser?" answer "**No**". Better, disable this action altogether:
 - In Chrome, go to chrome://settings/ and uncheck "Offer to save your web passwords"
 - In Firefox, go to about:preferences#security and uncheck "Remember logins for sites"
+- In Safari, go to Preferences >> Passwords and uncheck "AutoFill user names and passwords"
 
 ## Use Two Factor (or 2-Step) Authentication (TFA, 2FA)
 Two factor authentication includes something you know (e.g. your memorized password) and something you have (e.g. your smartphone or a YubiKey) and can greatly increase the security of your systems. CivicActions recommends you use Two Factor Authentication for services that support it.
