@@ -59,8 +59,10 @@ Assuming `~/bin/` is in your `$PATH`, create executable file `~/bin/out-lock` an
 ```
 #!/bin/sh
 # Not home (you will need to adjust to some reliable/secure test for your home network).
-# In this case, an internal NAT addressable file hoe.txt has the given sha256sum value.
-if ! curl -s 'http://192.168.1.99/home.txt' | sha256sum | grep 6094dd1d56b9d8638bc0e8e630683787151b81320d81568d97ec8daecb370bca > /dev/null; then
+# In this case, an internal NAT addressable file home.txt has the given sha256sum value.
+# if ! curl -s 'http://192.168.1.99/home.txt' | sha256sum | grep 6094dd1d56b9d8638bc0e8e630683787151b81320d81568d97ec8daecb370bca > /dev/null; then
+# Less secure, but likely good enough for most cases, check the MAC address of your router:
+if ! arp 192.168.1.1 | grep 48:5d:36:4c:d5:51 &> /dev/null; then
   # Not already locked.
   if ! pidof xsecurelock > /dev/null; then
     # Lock screen.
