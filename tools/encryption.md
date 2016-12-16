@@ -28,6 +28,7 @@ Table of Contents
   * [More Email References](#more-email-references)
 * [Private Messaging and Calling](#private-messaging-and-calling)
 * [Private Digital Cash](#private-digital-cash)
+* [More Links](#more-links)
 
 ## Brief Introduction to GnuPG
 
@@ -159,3 +160,8 @@ We recommend [Open Whisper Systems](https://whispersystems.org/). We like that t
 ## Private Digital Cash
 
 You've likely heard of the secure on-line money called [bitcoin](https://bitcoin.org/). The problem with bitcoin is that its transaction ledger is public, to the seller, buyer and amount of every transaction is published for anyone to see. Enter [Zcash](https://z.cash/) which adds extensions to bitcoin that offer total payment confidentiality (also on [Github](https://github.com/zcash/)).
+
+## More Links
+
+- [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3)
+- [Tails - the amnesic incognito live system](https://tails.boum.org/)
