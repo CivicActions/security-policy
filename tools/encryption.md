@@ -93,7 +93,7 @@ To decrypt a file, simply do:
 $ gpg --decrypt signed.asc --output newfile
 ```
 
-### Upload your private key to GPG key servers
+### Upload your public key to GPG key servers
 You'll want to upload your public key to a keyserver so others can send you encrypted files. To [send your key to a keyserver](https://debian-administration.org/article/451/Submitting_your_GPG_key_to_a_keyserver), you need to know your key ID. You can print the information on all keys you have the private key for by running
 ```
 $ gpg --list-secret-keys
