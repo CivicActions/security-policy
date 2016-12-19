@@ -164,5 +164,6 @@ You've likely heard of the secure on-line money called [bitcoin](https://bitcoin
 ## More Links
 
 - [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3) (includes [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) and [DuckDuckGo](https://duckduckgo.com/))
+- [Privacy Badger](https://www.eff.org/privacybadger) (EFF)
 - [Tails - the amnesic incognito live system](https://tails.boum.org/)
 - [Protecting Your Privacy Online](https://www.google.com/search?q=protecting+your+privacy+online) (Google search)
