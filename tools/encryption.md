@@ -19,7 +19,7 @@ Table of Contents
   * [Creating your public/private key pair](#creating-your-publicprivate-key-pair)
   * [Encrypting a file so only your friend can read it](#encrypting-a-file-so-only-your-friend-can-read-it)
   * [Decrypting a file encrypted with your public key](#decrypting-a-file-encrypted-with-your-public-key)
-  * [Upload your private key to GPG key servers](#upload-your-private-key-to-gpg-key-servers)
+  * [Upload your public key to GPG key servers](#upload-your-public-key-to-gpg-key-servers)
   * [More GnuPG information](#more-gnupg-information)
 * [Encrypting your email](#encrypting-your-email)
   * [Mailvelope (for Gmail in Chrome &amp; Firefox)](#mailvelope-for-gmail-in-chrome--firefox)
