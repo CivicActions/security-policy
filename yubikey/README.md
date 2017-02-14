@@ -20,6 +20,7 @@ Table of Contents
 * [Enable YubiKey TFA for applications](#enable-yubikey-tfa-for-applications)
   * [Lastpass](#lastpass)
   * [Google](#google)
+  * [Github](#github)
   * [AWS Root Account](#aws-root-account)
   * [AWS IAM Account](#aws-iam-account)
 * [Securing your Laptop](#securing-your-laptop)
@@ -116,6 +117,11 @@ For each Google account you have:
 - Return to the main page and add a second phone and/or print backup codes.
 - As long as you have a backup, you can also install the Yubikey Authenticator app, and configure your account to use that for the backup TFA instead of SMS/phone - this is the same as the Google Authenticator app, except that it stores the credentials on your Yubikey instead of the phone.
 - If you have funky devices/apps that don't support TFA, you can set an application specific password using that tab. This includes sending E-mail from your personal Gmail account using your civicactions.com IMAP, for instance.
+
+### Github
+- Visit https://github.com/settings/two_factor_authentication/configure
+- Enable TFA, and complete the phone verification process (phone will act as backup TFA).
+- Then you can "Register new device" in the "Security keys" section
 
 ### AWS Root Account
 For each AWS account you have:
