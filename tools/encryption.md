@@ -167,3 +167,4 @@ You've likely heard of the secure on-line money called [bitcoin](https://bitcoin
 - [Privacy Badger](https://www.eff.org/privacybadger) (EFF)
 - [Tails - the amnesic incognito live system](https://tails.boum.org/)
 - [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (DuckDuckGo search)
+- [The Privacy Enthusiast's Guide to Using an iPhone](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-an-iphone-1792386831)
