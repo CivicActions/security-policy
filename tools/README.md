@@ -82,7 +82,7 @@ There are many hardware and software tools for creating secure “one time passw
 
 ### TFA Backup Codes
 
-As a final step when setting up Two Factor Authentication with most services (Google, LastPass, GitHub, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure.
+As a final step when setting up Two Factor Authentication with most services (Google, LastPass, GitHub, etc.) you will be offered a chance to download and/or print a set of backup codes. These are worth downloading and printing (yes - on paper) and storing in a safe place, because if you lose your phone or YubiKey it can be difficult to regain access to your account unless you have these codes available. There are sometimes other options available, too, like SMS text message, but these other methods can be less secure. _Hint: you can store backup codes in LastPass._
 
 ### Connecting to you CivicActions' Google Account from Sevices/Apps after TFA has been Enabled 
 
@@ -124,7 +124,7 @@ Social engineering is the most common attack vector used to compromise computer 
 
 ## Keep Your Systems Up-to-date
 
-One of the best ways to protect yourself from being hacked (other than via a social engineering pathway) is to keep your software on your computers and phones up-to-date. Sometimes you may reasonably want to wait for a .1 or .2 release before updating after a new major release, but don’t get far behind.
+One of the best ways to protect yourself from being hacked (other than via a social engineering pathway) is to keep your software on your computers and phones up-to-date. Sometimes you may reasonably want to wait for a .1 or .2 release before updating after a new major release, but don’t get far behind. Also, if you have a Windows machine, you _*must*_ maintain an up-to-date anti-virus package on it.
 
 ## Disk Encryption and Storage Management
 
