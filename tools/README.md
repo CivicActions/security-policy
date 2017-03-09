@@ -106,6 +106,7 @@ Social engineering is the most common attack vector used to compromise computer 
     - Don’t click on links, hover and check the URLs
     - Don’t open attachments (unless you really trust the sender)
     - If in doubt, ask an IT member (e.g. via Slack)
+    - [More on Phishing avoidance from [EFF)](https://ssd.eff.org/en/module/how-avoid-phishing-attacks)
 	
 - Windows Technical Support
     - "Windows Technical Support has noticed that you have viruses or other malware on your computer..."
@@ -121,6 +122,7 @@ Social engineering is the most common attack vector used to compromise computer 
     - As usual, never enter your name or password information:
         - when on an insecure (non-HTTPS or SSL encrypted) connection, or
         - to a site that you have not verified is correct (by examining at the URL)
+    - [More on public WiFi network safety (from LifeHacker)](http://lifehacker.com/5576927/how-to-stay-safe-on-public-wi-fi-networks)
 
 ## Keep Your Systems Up-to-date
 
