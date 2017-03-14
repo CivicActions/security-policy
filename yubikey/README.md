@@ -41,7 +41,7 @@ The YubiKey is a hardware device manufactured by Yubico that provides a hardware
 - Do not use SMS text messages for two-factor authentication.
 
 ## Basic YubiKey Setup
-Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. 
+Before your YubiKey can act as a second (hardware) authentication token for applications, you need to install and configure some software that "personalizes" your YubiKey. _Note: newer Yubikeys may not require this step._
 
 ### Install packages
 #### Arch
