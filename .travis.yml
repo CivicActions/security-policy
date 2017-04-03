@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+- '6'
+cache: yarn
+script:
+- gulp | tee output.log
+- bash -c '! egrep -q "(error\W)" output.log'
+sudo: false
