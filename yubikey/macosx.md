@@ -1,37 +1,40 @@
 # YubiKey Support for Mac OS X
 
-This is the Mac OS X specific documentation for [YubiKey](/yubikey).
+This is the Mac OS X specific documentation for [YubiKey](README.md).
 
-Please help make this page more useful by adding links you found useful (describe exactly how they are useful) and and specific steps you used to install, configure, and test your YubiKey.
+*Please help make this page more useful by adding links you found useful (describe exactly how they are useful) and specific steps you used to install, configure, and test your YubiKey.*
 
 Table of Contents
 =================
 * [Install apps](#install-apps)
 * [Set up PAM TFA](#set-up-pam-tfa)
-* [Screen lock on lid closed](#screen-lock-on-lid-closed)
+* [Screen lock on lid close or 15 minutes idle](#screen-lock-on-lid-close-or-15-minutes-idle)
   * [Away detection ideas](#away-detection-ideas)
 * [YubiKey removal lock](#yubikey-removal-lock) (optional)
 * [Away detection ideas](linux.md#away-detection-ideas) (optional, on GNU/Linux page)
 
 ## Install apps
-See:
-- https://www.yubico.com/why-yubico/for-businesses/computer-login/mac-os-login/
-- https://www.yubico.com/2016/09/yubikey-smart-card-support-for-macos-sierra-2/
 
-_tbd..._
+See:
+* <https://www.yubico.com/why-yubico/for-businesses/computer-login/mac-os-login/>
+* <https://www.yubico.com/2016/09/yubikey-smart-card-support-for-macos-sierra-2/>
+
+*tbd...*
 
 ## Set up PAM TFA
 
-_tbd..._
+*tbd...*
 
 ## Screen lock on lid close or 15 minutes idle
 
-_tbd..._
+*tbd...*
 
 ### Away detection ideas
+
 Exceptions to the "idle timeout lock" can be made if you are on your home network and feel that it is secure. Adapt the below script if you only want to lock your screen when you are away from home.
 
 Assuming `~/bin/` is in your `$PATH`, and you want to see if a file is on a Windows server, create executable file `~/bin/out-lock`:
+
 ```
 #!/bin/sh
 MOUNT="$HOME/mountain"
@@ -56,6 +59,7 @@ fi
 ```
 
 The "cron" or launchctl file located at $HOME/Library/LaunchAgents/com.dan.outlock.plist might look like this to run every 15 minutes:
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -83,4 +87,4 @@ The "cron" or launchctl file located at $HOME/Library/LaunchAgents/com.dan.outlo
 
 ## YubiKey removal lock
 
-_tbd..._
+*tbd...*

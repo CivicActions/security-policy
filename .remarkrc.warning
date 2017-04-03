@@ -1,5 +1,9 @@
 {
   "plugins": [
-      "./.retext"
+      "./.retext",
+      "remark-lint-no-heading-content-indent",
+      "remark-lint-table-pipe-alignment",
+      "remark-lint-table-pipes",
+      ["remark-lint-table-cell-padding", "consistent"]
     ]
 }

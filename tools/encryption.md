@@ -1,11 +1,10 @@
 # Protecting Your Privacy with Encryption
-
 The following offers a brief overview of a few FOSS encryption tools that you can download and install to enhance the privacy of your interactions online.
 
 > This is important. If we only use encryption when we're working with important data, then encryption signals that data's importance. If only dissidents use encryption in a country, that country's authorities have an easy way of identifying them. But if everyone uses it all of the time, encryption ceases to be a signal. No one can distinguish simple chatting from deeply private conversation. The government can't tell the dissidents from the rest of the population. Every time you use encryption, you're protecting someone who needs to use it to stay alive.
-> - _[Why We Encrypt](https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html)_ by Bruce Schneier
+> _[Why We Encrypt](https://www.schneier.com/blog/archives/2015/06/why_we_encrypt.html)_ by Bruce Schneier
 
-This document is light in content but the links contain additional documentation that may be helpful. An hour or two of your time should be sufficient to set up your GnuPG key pair and encrypted email communications.
+This document is light in content but the links contain added documentation that may be helpful. An hour or two of your time should be enough to set up your GnuPG key pair and encrypted email communications.
 
 If you'd like some background on how encryption works, start by reading [An Introduction to Public Key Cryptography and PGP](https://ssd.eff.org/en/module/introduction-public-key-cryptography-and-pgp), a [Surveillance Self-Defense](https://ssd.eff.org/en) (also an excellent read) tutorial from your friends at the [Electronic Frontier Foundation](https://www.eff.org/) [[Donate!](https://supporters.eff.org/donate/)]
 
@@ -45,6 +44,7 @@ The current recommended version is GnuPG 2.x
   * Fedora/CentOS: `sudo yum|dnf install gnupg2`
 
 ### Creating your public/private key pair
+
 _Command line forms are shown here: Mac, Windows and even GNU/Linux have GUIs available._
 
 After installing GnuPG, you'll need to [generate a new key pair](https://www.apache.org/dev/openpgp.html#key-gen-generate-key):
@@ -53,11 +53,11 @@ $ gpg --gen-key
 ```
 
 Choose:
-- (1) RSA and RSA (default)
-- keysize = 4096 bits
-- 0 = key does not expire
-- use your civicactions.com email address (you can add more email addresses later)
-- use a strong pass phrase to protect your secret key
+* (1) RSA and RSA (default)
+* keysize = 4096 bits
+* 0 = key does not expire
+* use your civicactions.com email address (you can add more email addresses later)
+* use a strong pass phrase to protect your secret key
 
 The generated key is actually a _key pair_: a _public_ key that you can give to anyone, and a _private_ key that you protect with a passphrase. A file encrypted with someone's public key can only be decrypted by a person who posseses the associated private key. You can also _sign_ a document (encrypted or not) with your private key so that others who have your public key can verify that the document was signed by you - and only you.
 
@@ -68,14 +68,14 @@ $ gpg --help
 
 Note that the email integrations below do not require the command line; you just have to have created your key pair and shared your public key. But we show a few more commands first.
 
-
 ### Encrypting a file so only your friend can read it
+
 First, you have to look up your friend's public key on a key server:
 ```
 $ gpg --keyserver pool.sks-keyservers.net --search-keys 'fen labalme'
 ```
 
-This will list all the keys that match 'fen labalme'. You could call Fen (or look at his business card on which he included his key id) and see that (1) is the correct key, and anyway, the others two are (revoked), (expired) or just plain ancient. Entering the number "1" will import that key into your public keyring so that you can use it in the future. Look up some other co-workers or friends - if you're not sure of the key don't import it without verifying _at least_ the last eight hex digits of the key id with them directly.
+This will list all the keys that match "fen labalme". You could call Fen (or look at his business card on which he included his key id) and see that (1) is the correct key, and anyway, the others two are (revoked), (expired) or just plain ancient. Entering the number "1" will import that key into your public keyring so that you can use it in the future. Look up some other co-workers or friends - if you're not sure of the key don't import it without verifying _at least_ the last eight hex digits of the key id with them directly.
 
 Now you can encrypt a file so only your friend (in this case, Fen) can read it (the optional `--armor` argument creates an easy-to-cut-and-paste version of the encrypted document):
 ```
@@ -88,18 +88,20 @@ $ gpg --armor --output signed.asc --encrypt --sign --recipient fen@civicactions.
 ```
 
 ### Decrypting a file encrypted with your public key
+
 To decrypt a file, simply do:
 ```
 $ gpg --decrypt signed.asc --output newfile
 ```
 
 ### Upload your public key to GPG key servers
+
 You'll want to upload your public key to a keyserver so others can send you encrypted files. To [send your key to a keyserver](https://debian-administration.org/article/451/Submitting_your_GPG_key_to_a_keyserver), you need to know your key ID. You can print the information on all keys you have the private key for by running
 ```
 $ gpg --list-secret-keys
 ```
 
-This will generate output similar to the following:
+This will generate output like the following:
 ```
 $ gpg --list-secret-keys
 /home/fen/.gnupg/pubring.kbx
@@ -115,9 +117,10 @@ You can see the key ID, `446DB63655C12656`, on the first line describing the key
 $ gpg --send-keys 446DB63655C12656
 ```
 
-After some time for propagation (give it a few hours to a day) you can look up your public key by entering your email address or key id into a key search engine like http://pgp.mit.edu/
+After some time for propagation (give it a few hours to a day) you can look up your public key by entering your email address or key id into a key search engine like [pgp.mit.edu](http://pgp.mit.edu/)
 
 ### More GnuPG information
+
 * [GnuPG home](https://www.gnupg.org/)
 * [GnuPG Mini How-To](http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto.html)
 * [(Ubuntu) OpenPGP Key Signing Party](https://wiki.ubuntu.com/KeySigningParty)
@@ -136,18 +139,22 @@ In the case of post cards, generally it would be celebrity or a particularly int
 
 Bottom line: while your post cards are likely not being read, your emails are at the least being scanned by automated sniffers. But it is possible to wrap your _post card_-like email in a secure envelope known as encryption. If you use strong encryption, it can actually be impossible for even the NSA to decrypt the ciphertext without your cooperation (or perhaps NSA-injected malware in your computer that steals your private key and passphrase).
 
-Once you have created a GnuPG key pair and have added public keys of people you want to correspond with, there are a number of ways that you can integrate GPG with your email, several are described here:
+Once you have created a GnuPG key pair and have added public keys of people you want to correspond with, there are many ways that you can integrate GPG with your email, several are described here:
 
 ### Mailvelope (for Gmail in Chrome & Firefox)
+
 [Mailvelope](https://www.mailvelope.com/) integrates GPG with your Gmail using a Chrome or Firefox extension.
 
 ### GPG Suite (for Mac OSX Mail App)
+
 See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 
 ### Enigmail (Mozilla Thunderbird)
+
 [Enigmail](https://www.enigmail.net/index.php/en/) works with Mozilla Thunderbird and GPG to deliver a seamless encrypted email experience.
 
 ### More Email References
+
 * [Email Self-Defense](https://emailselfdefense.fsf.org/en/) (Free Software Foundation)
 * [The Best Free Ways to Send Encrypted Email and Secure Messages](http://www.howtogeek.com/135638/the-best-free-ways-to-send-encrypted-email-and-secure-messages/) (HowToGeek)
 * [Why No One Uses Encrypted Email Messages](http://www.howtogeek.com/187961/why-no-one-uses-encrypted-email-messages/) (HowToGeek)
@@ -155,7 +162,7 @@ See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 
 ## Private Messaging and Calling
 
-We recommend [Open Whisper Systems](https://whispersystems.org/). We like that their primary "forward secrecy" algorithm, along with the rest of their code, is GPL licensed on Github (https://github.com/whispersystems/).
+We recommend [Open Whisper Systems](https://whispersystems.org/). We like that their primary "forward secrecy" algorithm, along with the rest of their code, is GPL licensed on [Github](https://github.com/whispersystems/).
 
 ## Private Digital Cash
 
@@ -163,9 +170,9 @@ You've likely heard of the secure on-line money called [bitcoin](https://bitcoin
 
 ## More Links
 
-- [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3) (includes [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) and [DuckDuckGo](https://duckduckgo.com/))
-- [Privacy Badger](https://www.eff.org/privacybadger) (EFF)
-- [Tails - the amnesic incognito live system](https://tails.boum.org/)
-- [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (DuckDuckGo search)
-- [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725)
-- [The Privacy Enthusiast's Guide to Using an iPhone](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-an-iphone-1792386831)
+* [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3) (includes [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) and [DuckDuckGo](https://duckduckgo.com/))
+* [Privacy Badger](https://www.eff.org/privacybadger) (EFF)
+* [Tails - the amnesic incognito live system](https://tails.boum.org/)
+* [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (DuckDuckGo search)
+* [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725)
+* [The Privacy Enthusiast's Guide to Using an iPhone](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-an-iphone-1792386831)
