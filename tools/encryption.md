@@ -25,6 +25,7 @@ Table of Contents
   * [GPG Suite (for Mac OSX Mail App)](#gpg-suite-for-mac-osx-mail-app)
   * [Enigmail (Mozilla Thunderbird)](#enigmail-mozilla-thunderbird)
   * [More Email References](#more-email-references)
+    * [ProtonMail](#protonmail)
 * [Private Messaging and Calling](#private-messaging-and-calling)
 * [Private Digital Cash](#private-digital-cash)
 * [More Links](#more-links)
@@ -159,6 +160,10 @@ See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 * [The Best Free Ways to Send Encrypted Email and Secure Messages](http://www.howtogeek.com/135638/the-best-free-ways-to-send-encrypted-email-and-secure-messages/) (HowToGeek)
 * [Why No One Uses Encrypted Email Messages](http://www.howtogeek.com/187961/why-no-one-uses-encrypted-email-messages/) (HowToGeek)
 * [Why You Should Encrypt Your Email](https://www.lifewire.com/you-should-encrypt-your-email-2486679) (LifeWire)
+
+#### ProtonMail
+
+[ProtonMail](https://protonmail.com/) is a free and secure secure email service that provides arguably better security than GPG encrypted email sent via (say) Gmail as it not only encrypts but the service does not store metadata, such as who is emailing whom and when (and how large the message is). For the best results, both sides must be using ProtonMail.
 
 ## Private Messaging and Calling
 
