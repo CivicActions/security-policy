@@ -26,8 +26,8 @@ Table of Contents
   * [Enigmail (Mozilla Thunderbird)](#enigmail-mozilla-thunderbird)
   * [More Email References](#more-email-references)
     * [ProtonMail](#protonmail)
+* [Private Browsing](#private-browsing)
 * [Private Messaging and Calling](#private-messaging-and-calling)
-* [Private Digital Cash](#private-digital-cash)
 * [More Links](#more-links)
 
 ## Brief Introduction to GnuPG
@@ -165,19 +165,22 @@ See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 
 [ProtonMail](https://protonmail.com/) is a free and secure secure email service that provides arguably better security than GPG encrypted email sent via (say) Gmail as it not only encrypts but the service does not harvest/index/resell metadata, such as who is emailing whom and when. For the best results, both sides must be using ProtonMail.
 
+## Private Browsing
+
+Using [Tor](https://www.torproject.org/) or a paid VPN (such as [PIA](https://www.privateinternetaccess.com/) and there are others) is the best route, but these services will have minimum impact on your browsing habits and can go a long way to minimizing the data others collect about you:
+* [Privacy Badger](https://www.eff.org/privacybadger) to disable most ads and cookie collectors
+* [DuckDuckGo](https://duckduckgo.com/)
+
 ## Private Messaging and Calling
 
 We recommend [Open Whisper Systems](https://whispersystems.org/). We like that their primary "forward secrecy" algorithm, along with the rest of their code, is GPL licensed on [Github](https://github.com/whispersystems/).
 
-## Private Digital Cash
-
-You've likely heard of the secure on-line money called [bitcoin](https://bitcoin.org/). The problem with bitcoin is that its transaction ledger is public, to the seller, buyer and amount of every transaction is published for anyone to see. Enter [Zcash](https://z.cash/) which adds extensions to bitcoin that offer total payment confidentiality (also on [Github](https://github.com/zcash/)).
-
 ## More Links
 
 * [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3) (includes [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) and [DuckDuckGo](https://duckduckgo.com/))
-* [Privacy Badger](https://www.eff.org/privacybadger) (EFF)
 * [Tails - the amnesic incognito live system](https://tails.boum.org/)
 * [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (DuckDuckGo search)
 * [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725)
 * [The Privacy Enthusiast's Guide to Using an iPhone](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-an-iphone-1792386831)
+* [Bitcoin](https://bitcoin.org/) and [Zcash](https://z.cash/) - Private digital cash (advanced)
+* [Hardware that respects your freedom](https://www.fsf.org/resources/hw/endorsement/respects-your-freedom) (Free Software Foundation)
