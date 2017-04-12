@@ -167,9 +167,9 @@ See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 
 ## Private Browsing
 
-Using [Tor](https://www.torproject.org/) or a paid VPN (such as [PIA](https://www.privateinternetaccess.com/) and there are others) is the best route, but these services will have minimum impact on your browsing habits and can go a long way to minimizing the data others collect about you:
+Using [Tor](https://www.torproject.org/) or a paid VPN (such as [PIA](https://www.privateinternetaccess.com/) and there are others; be sure to choose an exit node that is not in the U.S.) is the best route, but the two simple and free services below will have little impact on your browsing experience and can go a long way to minimizing the data others collect about you:
 * [Privacy Badger](https://www.eff.org/privacybadger) to disable most ads and cookie collectors
-* [DuckDuckGo](https://duckduckgo.com/)
+* [DuckDuckGo](https://duckduckgo.com/) search that protects privacy and avoids the filter bubble
 
 ## Private Messaging and Calling
 
@@ -177,10 +177,10 @@ We recommend [Open Whisper Systems](https://whispersystems.org/). We like that t
 
 ## More Links
 
+* [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (a DuckDuckGo search)
 * [How to encrypt your entire life in less than an hour](https://medium.freecodecamp.com/tor-signal-and-beyond-a-law-abiding-citizens-guide-to-privacy-1a593f2104c3) (includes [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) and [DuckDuckGo](https://duckduckgo.com/))
-* [Tails - the amnesic incognito live system](https://tails.boum.org/)
-* [Protecting Your Privacy Online](https://duckduckgo.com/?q=protecting+your+privacy+online) (DuckDuckGo search)
 * [The Privacy Enthusiast's Guide to Using Android](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-android-1792432725)
 * [The Privacy Enthusiast's Guide to Using an iPhone](http://lifehacker.com/the-privacy-enthusiasts-guide-to-using-an-iphone-1792386831)
+* [Tails - the amnesic incognito live system](https://tails.boum.org/)
 * [Bitcoin](https://bitcoin.org/) and [Zcash](https://z.cash/) - Private digital cash (advanced)
 * [Hardware that respects your freedom](https://www.fsf.org/resources/hw/endorsement/respects-your-freedom) (Free Software Foundation)
