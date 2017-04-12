@@ -163,7 +163,7 @@ See [GPGTools](https://gpgtools.org/) _(not yet fully integrated with Sierra)_
 
 #### ProtonMail
 
-[ProtonMail](https://protonmail.com/) is a free and secure secure email service that provides arguably better security than GPG encrypted email sent via (say) Gmail as it not only encrypts but the service does not store metadata, such as who is emailing whom and when (and how large the message is). For the best results, both sides must be using ProtonMail.
+[ProtonMail](https://protonmail.com/) is a free and secure secure email service that provides arguably better security than GPG encrypted email sent via (say) Gmail as it not only encrypts but the service does not harvest/index/resell metadata, such as who is emailing whom and when. For the best results, both sides must be using ProtonMail.
 
 ## Private Messaging and Calling
 
