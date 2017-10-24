@@ -1,3 +1,9 @@
+
+
+# Deprecated as of April 2017
+
+This policy has been moved to  https://github.com/CivicActions/handbook/blob/master/docs/03-policies/security.md
+
 ---
 version: 1.1.1
 ---
